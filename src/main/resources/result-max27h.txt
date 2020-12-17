@@ -1,0 +1,29 @@
+match days:
+1: RL, ZG, MK @ MK
+1: HD, HK, DW @ HD
+1: KK, BC, FR @ KK
+2: RL, FR, DW @ FR
+2: KK, HK, MK @ HK
+2: HD, BC, ZG @ BC
+3: KK, ZG, DW @ DW
+3: BC, RL, HK @ RL
+3: HD, FR, MK @ FR
+4: HK, ZG @ ZG
+4: KK, RL @ KK
+4: BC, DW @ DW
+5: HD, RL @ RL
+5: MK, DW @ MK
+5: FR, ZG @ ZG
+6: KK, HD @ HD
+6: FR, HK @ HK
+6: BC, MK @ BC
+by club:
+KK: HD 6a, BC 1h, RL 4h, FR 1h, HK 2a, ZG 3a, MK 2a, DW 3a [3h, 5a, travel: 25h]
+HD: KK 6h, BC 2a, RL 5a, FR 3a, HK 1h, ZG 2a, MK 3a, DW 1h [3h, 5a, travel: 24h]
+BC: KK 1a, HD 2h, RL 3a, FR 1a, HK 3a, ZG 2h, MK 6h, DW 4a [3h, 5a, travel: 24h]
+RL: KK 4a, HD 5h, BC 3h, FR 2a, HK 3h, ZG 1a, MK 1a, DW 2a [3h, 5a, travel: 26h]
+FR: KK 1a, HD 3h, BC 1a, RL 2h, HK 6a, ZG 5a, MK 3h, DW 2h [4h, 4a, travel: 18h]
+HK: KK 2h, HD 1a, BC 3a, RL 3a, FR 6h, ZG 4a, MK 2h, DW 1a [3h, 5a, travel: 20h]
+ZG: KK 3a, HD 2a, BC 2a, RL 1a, FR 5h, HK 4h, MK 1a, DW 3a [2h, 6a, travel: 25h]
+MK: KK 2a, HD 3a, BC 6a, RL 1h, FR 3a, HK 2a, ZG 1h, DW 5h [3h, 5a, travel: 24h]
+DW: KK 3h, HD 1a, BC 4h, RL 2a, FR 2a, HK 1a, ZG 3h, MK 5a [3h, 5a, travel: 26h]
