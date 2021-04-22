@@ -16,10 +16,12 @@ class HostInGroupConstraint(private val problem: Problem) : ConstraintSet {
     override fun createInSolver(solver: MPSolver) {
         for ((matchDay, groupNo) in problem.getAllGroups()) {
             for (club in problem.clubs) {
-                val key = "hostInGroup-${matchDay.number}-$groupNo-${club.abbreviation}"
-                val hostVariable = Host.get(solver, matchDay, groupNo, club)
                 val groupVariable = GroupAssignment.get(solver, matchDay, groupNo, club)
-                solver.buildImplicationConstraint(key, hostVariable, groupVariable)
+                for (team in club.teams) {
+                    val key = "hostInGroup-${matchDay.number}-$groupNo-${club.abbreviation}-$team"
+                    val hostVariable = Host.get(solver, matchDay, groupNo, club, team)
+                    solver.buildImplicationConstraint(key, hostVariable, groupVariable)
+                }
             }
         }
     }

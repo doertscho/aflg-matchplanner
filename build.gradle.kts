@@ -14,10 +14,12 @@ repositories {
     }
 }
 
+val orToolsVersion = "8.1.8487"
+
 dependencies {
     implementation("net.java.dev.jna", "jna-platform", "5.5.0")
-    implementation(files("lib/ortools-java-8.0.8283.jar"))
-    implementation(files("lib/ortools-darwin-8.0.8283.jar"))
+    implementation(files("lib/ortools-java-${orToolsVersion}.jar"))
+    implementation(files("lib/ortools-darwin-${orToolsVersion}.jar"))
     implementation("com.google.protobuf", "protobuf-java", "3.13.0")
     testImplementation(kotlin("test-junit"))
 }

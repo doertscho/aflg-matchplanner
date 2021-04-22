@@ -15,15 +15,19 @@ import kotlin.math.floor
 class HomeAwayMatchesConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
-        val balance = problem.matchDays.size.toDouble() / 2.0
-        val lb = floor(balance - 1.0)
-        val ub = ceil(balance + 1.0)
         for (club in problem.clubs) {
-            val key = "homeAway-${club.abbreviation}"
-            val hostVariables = problem.getAllGroups().map { (matchDay, groupNo) ->
-                Host.get(solver, matchDay, groupNo, club)
+            for (team in club.teams) {
+
+                val balance = if (team == "m") 3.0 else 2.0 // TODO: calculate
+                val lb = 2.0
+                val ub = ceil(balance + 1.0)
+
+                val key = "homeMatches-${club.abbreviation}-$team"
+                val hostVariables = problem.getAllGroups().map { (matchDay, groupNo) ->
+                    Host.get(solver, matchDay, groupNo, club, team)
+                }
+                solver.buildSumConstraint(lb, ub, key, hostVariables)
             }
-            solver.buildSumConstraint(lb, ub, key, hostVariables)
         }
     }
 }

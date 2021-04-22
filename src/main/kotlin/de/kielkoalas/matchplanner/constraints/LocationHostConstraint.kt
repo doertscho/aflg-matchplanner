@@ -16,16 +16,19 @@ class LocationHostConstraint(private val problem: Problem) : ConstraintSet {
     override fun createInSolver(solver: MPSolver) {
         for ((matchDay, groupNo) in problem.getAllGroups()) {
             for (host in problem.clubs) {
-                val hostVariable = Host.get(solver, matchDay, groupNo, host)
                 for (guest in problem.clubs) {
-                    val key = "locationHost-${matchDay.number}-$groupNo-" +
-                            "${host.abbreviation}-${guest.abbreviation}"
-                    val groupVariable = GroupAssignment.get(solver, matchDay, groupNo, guest)
-                    val locationVariable = Location.get(solver, matchDay, groupNo, host, guest)
-                    val constraint = solver.makeConstraint(0.0, 1.0, key)
-                    constraint.setCoefficient(hostVariable, 1.0)
-                    constraint.setCoefficient(groupVariable, 1.0)
-                    constraint.setCoefficient(locationVariable, -2.0)
+                    val teams = host.teams.intersect(guest.teams)
+                    for (team in teams) {
+                        val hostVariable = Host.get(solver, matchDay, groupNo, host, team)
+                        val key = "locationHost-${matchDay.number}-$groupNo-" +
+                                "${host.abbreviation}-${guest.abbreviation}-$team"
+                        val groupVariable = GroupAssignment.get(solver, matchDay, groupNo, guest)
+                        val locationVariable = Location.get(solver, matchDay, groupNo, host, guest, team)
+                        val constraint = solver.makeConstraint(0.0, 1.0, key)
+                        constraint.setCoefficient(hostVariable, 1.0)
+                        constraint.setCoefficient(groupVariable, 1.0)
+                        constraint.setCoefficient(locationVariable, -2.0)
+                    }
                 }
             }
         }

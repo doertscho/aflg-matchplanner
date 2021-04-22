@@ -9,15 +9,15 @@ import de.kielkoalas.matchplanner.variables.GroupAssignment
 import de.kielkoalas.matchplanner.variables.Host
 import de.kielkoalas.matchplanner.variables.Location
 
-val KK = Club("KK", "Kiel Koalas")
-val HD = Club("HD", "Hamburg Dockers")
-val BC = Club("BC", "Berlin Crocodiles")
-val RL = Club("RL", "Rheinland Lions")
-val DW = Club("DW", "Dresden Wolves")
-val FR = Club("FR", "Frankfurt Redbacks")
-val HK = Club("HK", "Heidelberg Knights")
-val ZG = Club("ZG", "Zuffenhausen Giants")
-val MK = Club("MK", "Munich Kangaroos")
+val KK = Club("KK", "Kiel Koalas", setOf("m"))
+val HD = Club("HD", "Hamburg Dockers", setOf("m", "w"))
+val BC = Club("BC", "Berlin Crocodiles", setOf("m", "w"))
+val RL = Club("RL", "Rheinland Lions", setOf("m", "w"))
+val DW = Club("DW", "Dresden Wolves", setOf("m"))
+val FR = Club("FR", "Frankfurt Redbacks", setOf("m", "w"))
+val HK = Club("HK", "Heidelberg Knights", setOf("m"))
+val ZG = Club("ZG", "Zuffenhausen Giants", setOf("m", "w"))
+val MK = Club("MK", "Munich Kangaroos", setOf("m"))
 
 val distances = mapOf(
     Pair(KK, HD) to Distance(60),
@@ -65,19 +65,24 @@ val distances = mapOf(
     Pair(ZG, MK) to Distance(120),
 )
 
+val matchDays = listOf(
+    MatchDay(1, 3),
+    MatchDay(2, 3),
+    MatchDay(3, 3),
+    MatchDay(4, 2, 3),
+    MatchDay(5, 2, 3),
+    MatchDay(6, 2, 3)
+)
+val matchDaysSecondRound = matchDays.map {
+    it.copy(number = it.number + matchDays.size, round = 2)
+}
+
 fun main() {
 
     val problem = Problem(
         clubs = setOf(KK, HD, BC, RL, FR, HK, ZG, MK, DW),
         distances = distances,
-        matchDays = listOf(
-            MatchDay(1, 3),
-            MatchDay(2, 3),
-            MatchDay(3, 3),
-            MatchDay(4, 2, 3),
-            MatchDay(5, 2, 3),
-            MatchDay(6, 2, 3),
-        ),
+        matchDays = matchDays,// + matchDaysSecondRound,
         variables = setOf(
             GroupAssignment,
             Host,
@@ -90,11 +95,14 @@ fun main() {
             Dictionary.ONE_HOST_PER_GROUP.name,
             Dictionary.HOST_IN_GROUP.name,
             Dictionary.HOST_TO_HAVE_GUESTS.name,
-            Dictionary.ONE_MATCH_AGAINST_EACH.name,
+            Dictionary.ONE_MATCH_PER_ROUND_AGAINST_EACH.name,
             Dictionary.DUEL_IN_GROUP.name,
             Dictionary.HOME_AWAY_MATCHES.name,
             Dictionary.LOCATION_HOST_LINK.name,
+            Dictionary.EACH_CLUB_HOSTED_AT_MOST_ONCE.name,
             Dictionary.MAX_DISTANCE.name,
+            Dictionary.CLUB_TEAMS_PLAY_TOGETHER.name,
+            Dictionary.CLUB_TEAMS_HOST_TOGETHER.name,
         )
     )
 

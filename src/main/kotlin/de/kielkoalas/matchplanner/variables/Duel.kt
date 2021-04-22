@@ -10,12 +10,14 @@ data class DuelKey(
     val groupNo: Int,
     val club1: Club,
     val club2: Club,
+    val team: String,
 )
 
 /**
- * A set of variables D where D(m, n, c1, c2) = 1 iff club c1 plays against
- * club c2 in group n on match day m. To avoid duplication, one variable shall
- * be created per pair of clubs that represents either order.
+ * A set of variables D where D(m, n, c1, c2, t) = 1 iff team t of club c1
+ * plays against team t of club c2 in group n on match day m. To avoid
+ * duplication, one variable shall be created per pair of clubs that represents
+ * either order.
  */
 object Duel : VariableSet<DuelKey> {
 
@@ -25,25 +27,28 @@ object Duel : VariableSet<DuelKey> {
         val clubs = listOf(components.club1, components.club2).map{ it.name }.sorted()
         val club1 = clubs[0]
         val club2 = clubs[1]
+        val team = components.team
         if (club1 == club2) {
             throw IllegalArgumentException("Requesting duel of $club1 against itself")
         }
-        return "${matchDay.number}:${club1}-vs-${club2}@$groupNo"
+        return "${matchDay.number}${team}:${club1}-vs-${club2}@$groupNo"
     }
 
     override fun createInSolver(problem: Problem, solver: MPSolver) {
         for ((matchDay, groupNo) in problem.getAllGroups()) {
-            for ((club1, club2) in problem.getDuels()) {
-                val key = getKey(DuelKey(matchDay, groupNo, club1, club2))
-                solver.makeBoolVar(key)
+            for ((club1, club2, teams) in problem.getDuels()) {
+                for (team in teams) {
+                    val key = getKey(DuelKey(matchDay, groupNo, club1, club2, team))
+                    solver.makeBoolVar(key)
+                }
             }
         }
     }
 
     fun get(
-        solver: MPSolver, matchDay: MatchDay, groupNo: Int, club1: Club, club2: Club
+        solver: MPSolver, matchDay: MatchDay, groupNo: Int, club1: Club, club2: Club, team: String,
     ): MPVariable {
-        val key = getKey(DuelKey(matchDay, groupNo, club1, club2))
+        val key = getKey(DuelKey(matchDay, groupNo, club1, club2, team))
         return solver.lookupVariableOrNull(key)
             ?: throw IllegalStateException("Variable $key has not been created in solver")
     }

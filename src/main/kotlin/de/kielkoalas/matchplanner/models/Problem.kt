@@ -11,11 +11,17 @@ data class Problem(
     val constraints: Set<String>,
 )
 
-fun Problem.getDuels(): List<Pair<Club, Club>> {
+fun Problem.getTeams(): Set<String> = clubs.flatMap { it.teams }.distinct().toSet()
+
+fun Problem.getOthers(club: Club, team: String) =
+    clubs.filter { it != club && it.teams.contains(team) }
+
+fun Problem.getDuels(): List<Triple<Club, Club, Set<String>>> {
     val sorted = clubs.sortedBy { it.name }
     return sorted.flatMapIndexed { index: Int, club1: Club ->
         sorted.drop(index + 1).map { club2: Club ->
-            Pair(club1, club2)
+            val teams = club1.teams.intersect(club2.teams)
+            Triple(club1, club2, teams)
         }
     }
 }

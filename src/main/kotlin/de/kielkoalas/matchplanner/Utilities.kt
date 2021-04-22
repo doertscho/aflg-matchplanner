@@ -2,8 +2,6 @@ package de.kielkoalas.matchplanner
 
 import com.google.ortools.linearsolver.MPSolver
 import com.google.ortools.linearsolver.MPVariable
-import de.kielkoalas.matchplanner.variables.GroupAssignment
-import de.kielkoalas.matchplanner.variables.Host
 
 fun <R> withStopWatch(name: String, action: () -> R): R {
     val stopWatchStart = System.nanoTime()

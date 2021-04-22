@@ -85,7 +85,7 @@ class Solver {
         val matchDayAssignments = problem.matchDays.map { matchDay ->
             val groups: Set<Group> = matchDay.getGroupNumbers(problem).map { groupNo ->
                 val host = problem.clubs.find { club ->
-                    isSet(Host.get(mpSolver, matchDay, groupNo, club))
+                    isSet(Host.get(mpSolver, matchDay, groupNo, club, "m")) // TODO: dynamicalise
                 } ?: throw IllegalStateException("No host in ${matchDay.number}:$groupNo")
                 val clubs = problem.clubs.filter { club ->
                     isSet(GroupAssignment.get(mpSolver, matchDay, groupNo, club))

@@ -13,11 +13,14 @@ object ConstraintResolver {
         Dictionary.ONE_HOST_PER_GROUP.name to { p -> OneHostPerGroupConstraint(p) },
         Dictionary.HOST_IN_GROUP.name to { p -> HostInGroupConstraint(p) },
         Dictionary.HOST_TO_HAVE_GUESTS.name to { p -> HostToHaveGuestsConstraint(p) },
-        Dictionary.ONE_MATCH_AGAINST_EACH.name to { p -> OneMatchAgainstEachClubConstraint(p) },
+        Dictionary.ONE_MATCH_PER_ROUND_AGAINST_EACH.name to { p -> OneMatchPerRoundAgainstEachClubConstraint(p) },
         Dictionary.DUEL_IN_GROUP.name to { p -> DuelInGroupConstraint(p) },
         Dictionary.HOME_AWAY_MATCHES.name to { p -> HomeAwayMatchesConstraint(p) },
+        Dictionary.EACH_CLUB_HOSTED_AT_MOST_ONCE.name to { p -> EachClubHostedAtMostOnceConstraint(p) },
         Dictionary.LOCATION_HOST_LINK.name to { p -> LocationHostConstraint(p) },
         Dictionary.MAX_DISTANCE.name to { p -> DistanceConstraint(p) },
+        Dictionary.CLUB_TEAMS_PLAY_TOGETHER.name to { p -> ClubTeamsPlayTogetherConstraint(p) },
+        Dictionary.CLUB_TEAMS_HOST_TOGETHER.name to { p -> ClubTeamsHostTogetherConstraint(p) },
     )
 
     fun resolve(key: String, problem: Problem): ConstraintSet? {

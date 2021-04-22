@@ -12,17 +12,18 @@ import de.kielkoalas.matchplanner.variables.Location
  */
 class DistanceConstraint(private val problem: Problem) : ConstraintSet {
 
-    private val ub = 27.0 * 60
-
     override fun createInSolver(solver: MPSolver) {
         for (guest in problem.clubs) {
-            val key = "maxDistance-${guest.abbreviation}"
-            val constraint = solver.makeConstraint(0.0, ub, key)
-            for ((matchDay, groupNo) in problem.getAllGroups()) {
-                for (host in problem.clubs) {
-                    val distance = 2.0 * problem.getDistance(guest, host).minutesByCar
-                    val locationVariable = Location.get(solver, matchDay, groupNo, host, guest)
-                    constraint.setCoefficient(locationVariable, distance)
+            for (team in guest.teams) {
+                val ub = 60 * if (team == "m") 28.0 else 22.0
+                val key = "maxDistance-${guest.abbreviation}"
+                val constraint = solver.makeConstraint(0.0, ub, key)
+                for ((matchDay, groupNo) in problem.getAllGroups()) {
+                    for (host in problem.clubs) {
+                        val distance = 2.0 * problem.getDistance(guest, host).minutesByCar
+                        val locationVariable = Location.get(solver, matchDay, groupNo, host, guest, team)
+                        constraint.setCoefficient(locationVariable, distance)
+                    }
                 }
             }
         }

@@ -15,11 +15,13 @@ import de.kielkoalas.matchplanner.variables.GroupAssignment
 class DuelInGroupConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
-        for ((club1, club2) in problem.getDuels()) {
+        for ((club1, club2, teams) in problem.getDuels()) {
+            // TODO: See other
+            val team = teams.first()
             for ((matchDay, groupNo) in problem.getAllGroups()) {
                 val key = "duelInGroup-${matchDay.number}-$groupNo-" +
                         "${club1.abbreviation}-vs-${club2.abbreviation}"
-                val duelVariable = Duel.get(solver, matchDay, groupNo, club1, club2)
+                val duelVariable = Duel.get(solver, matchDay, groupNo, club1, club2, team)
                 val groupVariable1 = GroupAssignment.get(solver, matchDay, groupNo, club1)
                 val groupVariable2 = GroupAssignment.get(solver, matchDay, groupNo, club2)
                 val constraint = solver.makeConstraint(-1.0, 0.0, key)

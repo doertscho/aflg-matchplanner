@@ -1,0 +1,128 @@
+Match day 1:
+
+Host: Rheinland Lions
+Rheinland Lions (m) - Hamburg Dockers (m)
+Rheinland Lions (w) - Hamburg Dockers (w)
+Hamburg Dockers (m) - Munich Kangaroos (m)
+Rheinland Lions (m) - Munich Kangaroos (m)
+
+Host: Zuffenhausen Giants
+Berlin Crocodiles (m) - Heidelberg Knights (m)
+Zuffenhausen Giants (m) - Berlin Crocodiles (m)
+Southern Tigeroos (w) - Berlin Crocodiles (w)
+Zuffenhausen Giants (m) - Heidelberg Knights (m)
+
+Host: Kiel Koalas
+Kiel Koalas (m) - Frankfurt Redbacks (m)
+Kiel Koalas (m) - Dresden Wolves (m)
+Frankfurt Redbacks (m) - Dresden Wolves (m)
+
+**************
+
+Match day 2:
+
+Host: Hamburg Dockers
+Hamburg Dockers (m) - Kiel Koalas (m)
+Kiel Koalas (m) - Zuffenhausen Giants (m)
+Hamburg Dockers (m) - Zuffenhausen Giants (m)
+Hamburg Dockers (w) - Southern Tigeroos (w)
+
+Host: Berlin Crocodiles
+Berlin Crocodiles (m) - Frankfurt Redbacks (m)
+Berlin Crocodiles (w) - Frankfurt Redcats (w)
+Berlin Crocodiles (m) - Munich Kangaroos (m)
+Frankfurt Redbacks (m) - Munich Kangaroos (m)
+
+Host: Heidelberg Knights
+Heidelberg Knights (m) - Rheinland Lions (m)
+Rheinland Lions (m) - Dresden Wolves (m)
+Heidelberg Knights (m) - Dresden Wolves (m)
+
+**************
+
+Match day 3:
+
+Host: Munich Kangaroos
+Munich Kangaroos (m) - Zuffenhausen Giants (m)
+Zuffenhausen Giants (m) - Dresden Wolves (m)
+Munich Kangaroos (m) - Dresden Wolves (m)
+
+Host: Berlin Crocodiles
+Berlin Crocodiles (m) - Kiel Koalas (m)
+Kiel Koalas (m) - Rheinland Lions (m)
+Berlin Crocodiles (m) - Rheinland Lions (m)
+Berlin Crocodiles (w) - Rheinland Lions (w)
+
+Host: Frankfurt Redbacks
+Frankfurt Redbacks (m) - Hamburg Dockers (m)
+Frankfurt Redcats (w) - Hamburg Dockers (w)
+Hamburg Dockers (m) - Heidelberg Knights (m)
+Frankfurt Redbacks (m) - Heidelberg Knights (m)
+
+**************
+
+Match day 4:
+
+Host: Dresden Wolves
+Dresden Wolves (m) - Berlin Crocodiles (m)
+
+Host: Zuffenhausen Giants
+Zuffenhausen Giants (m) - Rheinland Lions (m)
+Southern Tigeroos (w) - Rheinland Lions (w)
+
+Host: Heidelberg Knights
+Heidelberg Knights (m) - Munich Kangaroos (m)
+
+Byes: Kiel Koalas, Hamburg Dockers, Frankfurt Redbacks
+
+**************
+
+Match day 5:
+
+Host: Frankfurt Redbacks
+Frankfurt Redbacks (m) - Zuffenhausen Giants (m)
+Frankfurt Redcats (w) - Southern Tigeroos (w)
+
+Host: Dresden Wolves
+Dresden Wolves (m) - Hamburg Dockers (m)
+
+Host: Munich Kangaroos
+Munich Kangaroos (m) - Kiel Koalas (m)
+
+Byes: Berlin Crocodiles, Rheinland Lions, Heidelberg Knights
+
+**************
+
+Match day 6:
+
+Host: Kiel Koalas
+Kiel Koalas (m) - Heidelberg Knights (m)
+
+Host: Hamburg Dockers
+Hamburg Dockers (m) - Berlin Crocodiles (m)
+Hamburg Dockers (w) - Berlin Crocodiles (w)
+
+Host: Rheinland Lions
+Rheinland Lions (m) - Frankfurt Redbacks (m)
+Rheinland Lions (w) - Frankfurt Redcats (w)
+
+Byes: Zuffenhausen Giants, Munich Kangaroos, Dresden Wolves
+
+**************
+
+Summary by club:
+
+KK (m): HD 2a, BC 3a, RL 3n, FR 1h, HK 6h, ZG 2n, MK 5a, DW 1h [3h, 5a/n, travel: 25h]
+HD (m): KK 2h, BC 6h, RL 1a, FR 3a, HK 3n, ZG 2h, MK 1n, DW 5a [3h, 5a/n, travel: 28h]
+HD (w): BC 6h, RL 1a, FR 3a, ZG 2h [2h, 2a/n, travel: 18h]
+BC (m): KK 3h, HD 6a, RL 3h, FR 2h, HK 1n, ZG 1a, MK 2h, DW 4a [4h, 4a/n, travel: 23h]
+BC (w): HD 6a, RL 3h, FR 2h, ZG 1a [2h, 2a/n, travel: 17h]
+RL (m): KK 3n, HD 1h, BC 3a, FR 6h, HK 2a, ZG 4a, MK 1h, DW 2n [3h, 5a/n, travel: 24h]
+RL (w): HD 1h, BC 3a, FR 6h, ZG 4a [2h, 2a/n, travel: 19h]
+FR (m): KK 1a, HD 3h, BC 2a, RL 6a, HK 3h, ZG 5h, MK 2n, DW 1n [3h, 5a/n, travel: 26h]
+FR (w): HD 3h, BC 2a, RL 6a, ZG 5h [2h, 2a/n, travel: 14h]
+HK (m): KK 6a, HD 3n, BC 1n, RL 2h, FR 3a, ZG 1a, MK 4h, DW 2h [3h, 5a/n, travel: 18h]
+ZG (m): KK 2n, HD 2a, BC 1h, RL 4h, FR 5a, HK 1h, MK 3a, DW 3n [3h, 5a/n, travel: 22h]
+ST (w): HD 2a, BC 1h, RL 4h, FR 5a [2h, 2a/n, travel: 18h]
+MK (m): KK 5h, HD 1n, BC 2a, RL 1a, FR 2n, HK 4a, ZG 3h, DW 3h [3h, 5a/n, travel: 28h]
+DW (m): KK 1a, HD 5h, BC 4h, RL 2n, FR 1n, HK 2a, ZG 3n, MK 3a [2h, 6a/n, travel: 29h]

@@ -1,0 +1,47 @@
+match days:
+1: KK, HD, ZG @ KK
+1: BC, FR, HK @ HK
+1: RL, MK, DW @ DW
+2: KK, RL, FR @ KK
+2: BC, ZG, MK @ BC
+2: HD, HK, DW @ HK
+3: HD, BC, RL @ HD
+3: KK, HK, MK @ HK
+3: FR, ZG, DW @ FR
+4: RL, ZG @ RL
+4: KK, BC @ KK
+4: HD, MK @ MK
+5: KK, DW @ KK
+5: HK, ZG @ ZG
+5: FR, MK @ FR
+6: RL, HK @ RL
+6: BC, DW @ BC
+6: HD, FR @ HD
+7: KK, ZG, DW @ DW
+7: RL, HK, MK @ MK
+7: HD, BC, FR @ BC
+8: KK, HD, MK @ HD
+8: BC, RL, ZG @ ZG
+8: FR, HK, DW @ DW
+9: FR, ZG, MK @ ZG
+9: KK, BC, HK @ BC
+9: HD, RL, DW @ RL
+10: HD, HK @ HD
+10: RL, FR @ FR
+10: MK, DW @ MK
+11: HD, ZG @ ZG
+11: BC, DW @ DW
+11: KK, FR @ FR
+12: KK, RL @ RL
+12: HK, ZG @ HK
+12: BC, MK @ MK
+by club:
+KK: HD 1h, 8a, BC 4h, 9a, RL 2h, 12a, FR 2h, 11a, HK 3a, 9n, ZG 1h, 7n, MK 3n, 8n, DW 5h, 7a [6h, 10a/n, travel: 55h]
+HD: KK 1a, 8h, BC 3h, 7a, RL 3h, 9a, FR 6h, 7n, HK 2a, 10h, ZG 1n, 11a, MK 4a, 8h, DW 2n, 9n [6h, 10a/n, travel: 56h]
+BC: KK 4a, 9h, HD 3a, 7h, RL 3n, 8n, FR 1n, 7h, HK 1a, 9h, ZG 2h, 8a, MK 2h, 12a, DW 6h, 11a [7h, 9a/n, travel: 53h]
+RL: KK 2a, 12h, HD 3a, 9h, BC 3n, 8n, FR 2n, 10a, HK 6h, 7n, ZG 4h, 8a, MK 1n, 7a, DW 1a, 9h [5h, 11a/n, travel: 54h]
+FR: KK 2a, 11h, HD 6a, 7n, BC 1n, 7a, RL 2n, 10h, HK 1a, 8n, ZG 3h, 9a, MK 5h, 9n, DW 3h, 8a [5h, 11a/n, travel: 47h]
+HK: KK 3h, 9n, HD 2h, 10a, BC 1h, 9a, RL 6a, 7n, FR 1h, 8n, ZG 5a, 12h, MK 3h, 7a, DW 2h, 8a [7h, 9a/n, travel: 47h]
+ZG: KK 1a, 7n, HD 1n, 11h, BC 2a, 8h, RL 4a, 8h, FR 3a, 9h, HK 5h, 12a, MK 2n, 9h, DW 3n, 7a [6h, 10a/n, travel: 53h]
+MK: KK 3n, 8n, HD 4h, 8a, BC 2a, 12h, RL 1n, 7h, FR 5a, 9n, HK 3a, 7h, ZG 2n, 9a, DW 1a, 10h [5h, 11a/n, travel: 51h]
+DW: KK 5a, 7h, HD 2n, 9n, BC 6a, 11h, RL 1h, 9a, FR 3a, 8h, HK 2a, 8h, ZG 3n, 7h, MK 1h, 10a [7h, 9a/n, travel: 54h]
