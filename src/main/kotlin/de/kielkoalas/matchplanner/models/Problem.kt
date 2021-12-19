@@ -1,11 +1,17 @@
 package de.kielkoalas.matchplanner.models
 
 import de.kielkoalas.matchplanner.VariableSet
+import java.time.LocalDate
 
 data class Problem(
     val clubs: Set<Club>,
     val matchDays: List<MatchDay>,
     val distances: Map<Pair<Club, Club>, Distance>,
+    val pools: Set<Pool> = setOf(),
+    val teams: Set<Team> = setOf(),
+    val competitions: Set<String> = teams.map { it.team }.distinct().toSet(),
+
+    val startDate: LocalDate,
 
     val variables: Set<VariableSet<*>>,
     val constraints: Set<String>,

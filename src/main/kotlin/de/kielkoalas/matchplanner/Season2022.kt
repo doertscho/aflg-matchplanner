@@ -1,22 +1,20 @@
 package de.kielkoalas.matchplanner
 
-import de.kielkoalas.matchplanner.models.Club
-import de.kielkoalas.matchplanner.models.Distance
-import de.kielkoalas.matchplanner.models.MatchDay
-import de.kielkoalas.matchplanner.models.Problem
+import de.kielkoalas.matchplanner.models.*
 import de.kielkoalas.matchplanner.variables.Duel
 import de.kielkoalas.matchplanner.variables.GroupAssignment
 import de.kielkoalas.matchplanner.variables.Host
 import de.kielkoalas.matchplanner.variables.Location
+import java.time.LocalDate
 
 val KK = Club("KK", "Kiel Koalas", setOf("m"))
 val HD = Club("HD", "Hamburg Dockers", setOf("m", "w"))
 val BC = Club("BC", "Berlin Crocodiles", setOf("m", "w"))
 val RL = Club("RL", "Rheinland Lions", setOf("m", "w"))
 val DW = Club("DW", "Dresden Wolves", setOf("m"))
-val FR = Club("FR", "Frankfurt Redbacks", setOf("m", "w"))
-val HK = Club("HK", "Heidelberg Knights", setOf("m"))
-val ZG = Club("ZG", "Zuffenhausen Giants", setOf("m", "w"))
+val FR = Club("FR", "Frankfurt Redbacks", setOf("m"))
+val HK = Club("HK", "Heidelberg Knights", setOf("m", "w"))
+val ZG = Club("ZG", "Zuffenhausen Giants", setOf("m"))
 val MK = Club("MK", "Munich Kangaroos", setOf("m"))
 
 val distances = mapOf(
@@ -65,24 +63,47 @@ val distances = mapOf(
     Pair(ZG, MK) to Distance(120),
 )
 
+
+
+var no = 1;
 val matchDays = listOf(
-    MatchDay(1, 3),
-    MatchDay(2, 3),
-    MatchDay(3, 3),
-    MatchDay(4, 2, 3),
-    MatchDay(5, 2, 3),
-    MatchDay(6, 2, 3)
+    MatchDay(no++, 3),
+    MatchDay(no++, 3),
+    MatchDay(no++, 3),
+    MatchDay(no++, 3),
+    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
+    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
+    MatchDay(no++, 3, round = 2),
+    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
+    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
+    MatchDay(no++, 3, round = 2),
+    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
+    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
 )
-val matchDaysSecondRound = matchDays.map {
-    it.copy(number = it.number + matchDays.size, round = 2)
-}
+
+val poolA = Pool("Pool A", setOf(HD, BC, MK), "m")
+val poolB = Pool("Pool B", setOf(DW, RL, FR), "m")
+val poolC = Pool("Pool C", setOf(KK, HK, ZG), "m")
+
+val clubs = setOf(KK, HD, BC, RL, FR, HK, ZG, MK, DW)
+val mensTeams = clubs.map { club ->
+    Team(club.abbreviation, club.name, "m", setOf(club) )
+}.toSet()
+val womensTeams = setOf(HD, BC, RL, HK).map { club ->
+    Team(club.abbreviation, club.name, "w", setOf(club) )
+} + setOf(
+    Team("AF", name = "All-German Flamingos", team = "w", clubs = setOf(KK, MK, FR))
+)
 
 fun main() {
 
     val problem = Problem(
-        clubs = setOf(KK, HD, BC, RL, FR, HK, ZG, MK, DW),
+        startDate = LocalDate.parse("2022-04-23"),
+        clubs = clubs,
+        teams = mensTeams + womensTeams,
+        pools = setOf(poolA, poolB, poolC),
         distances = distances,
-        matchDays = matchDays,// + matchDaysSecondRound,
+        matchDays = matchDays,
         variables = setOf(
             GroupAssignment,
             Host,
@@ -101,8 +122,12 @@ fun main() {
             Dictionary.LOCATION_HOST_LINK.name,
             Dictionary.EACH_CLUB_HOSTED_AT_MOST_ONCE.name,
             Dictionary.MAX_DISTANCE.name,
+            Dictionary.FULL_MATCHES_IN_POOL.name,
+            Dictionary.FULL_MATCHES_OUTSIDE_POOL.name,
+            Dictionary.NO_CONSECUTIVE_BYES.name,
             Dictionary.CLUB_TEAMS_PLAY_TOGETHER.name,
             Dictionary.CLUB_TEAMS_HOST_TOGETHER.name,
+            Dictionary.INDIVIDUAL_WISHES.name,
         )
     )
 

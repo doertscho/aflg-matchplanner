@@ -1,0 +1,229 @@
+Match day 1 (2022-04-23):
+
+Host: Kiel Koalas
+Kiel Koalas (m) - Heidelberg Knights (m)
+Kiel Koalas (m) - Dresden Wolves (m)
+Heidelberg Knights (m) - Dresden Wolves (m)
+
+Host: Hamburg Dockers
+Hamburg Dockers (m) - Berlin Crocodiles (m)
+Hamburg Dockers (w) - Berlin Crocodiles (w)
+Hamburg Dockers (m) - Frankfurt Redbacks (m)
+Berlin Crocodiles (m) - Frankfurt Redbacks (m)
+
+Host: Munich Kangaroos
+Rheinland Lions (m) - Zuffenhausen Giants (m)
+Munich Kangaroos (m) - Rheinland Lions (m)
+Munich Kangaroos (m) - Zuffenhausen Giants (m)
+
+**************
+
+Match day 2 (2022-05-07):
+
+Host: Heidelberg Knights
+Heidelberg Knights (m) - Berlin Crocodiles (m)
+Heidelberg Knights (w) - Berlin Crocodiles (w)
+Berlin Crocodiles (m) - Munich Kangaroos (m)
+Heidelberg Knights (m) - Munich Kangaroos (m)
+
+Host: Rheinland Lions
+Rheinland Lions (m) - Frankfurt Redbacks (m)
+Rheinland Lions (m) - Dresden Wolves (m)
+Frankfurt Redbacks (m) - Dresden Wolves (m)
+
+Host: Hamburg Dockers
+Hamburg Dockers (m) - Kiel Koalas (m)
+Kiel Koalas (m) - Zuffenhausen Giants (m)
+Hamburg Dockers (m) - Zuffenhausen Giants (m)
+
+**************
+
+Match day 3 (2022-05-21):
+
+Host: Heidelberg Knights
+Hamburg Dockers (m) - Rheinland Lions (m)
+Hamburg Dockers (w) - Rheinland Lions (w)
+Heidelberg Knights (m) - Hamburg Dockers (m)
+Heidelberg Knights (w) - Hamburg Dockers (w)
+Heidelberg Knights (m) - Rheinland Lions (m)
+Heidelberg Knights (w) - Rheinland Lions (w)
+
+Host: Frankfurt Redbacks
+Frankfurt Redbacks (m) - Kiel Koalas (m)
+Kiel Koalas (m) - Munich Kangaroos (m)
+Frankfurt Redbacks (m) - Munich Kangaroos (m)
+
+Host: Dresden Wolves
+Berlin Crocodiles (m) - Zuffenhausen Giants (m)
+Dresden Wolves (m) - Berlin Crocodiles (m)
+Dresden Wolves (m) - Zuffenhausen Giants (m)
+
+**************
+
+Match day 4 (2022-06-04):
+
+Host: Berlin Crocodiles
+Berlin Crocodiles (m) - Kiel Koalas (m)
+Kiel Koalas (m) - Rheinland Lions (m)
+Berlin Crocodiles (m) - Rheinland Lions (m)
+Berlin Crocodiles (w) - Rheinland Lions (w)
+
+Host: Frankfurt Redbacks
+Frankfurt Redbacks (m) - Heidelberg Knights (m)
+Frankfurt Redbacks (m) - Zuffenhausen Giants (m)
+Heidelberg Knights (m) - Zuffenhausen Giants (m)
+
+Host: Munich Kangaroos
+Munich Kangaroos (m) - Hamburg Dockers (m)
+Hamburg Dockers (m) - Dresden Wolves (m)
+Munich Kangaroos (m) - Dresden Wolves (m)
+
+**************
+
+Match day 5 (2022-06-18):
+
+Host: Frankfurt Redbacks
+Frankfurt Redbacks (m) - Dresden Wolves (m)
+
+Host: Heidelberg Knights
+Heidelberg Knights (m) - Zuffenhausen Giants (m)
+
+Host: Hamburg Dockers
+Hamburg Dockers (m) - Munich Kangaroos (m)
+
+Byes: Kiel Koalas, Berlin Crocodiles, Rheinland Lions
+
+**************
+
+Match day 6 (2022-07-02):
+
+Host: Berlin Crocodiles
+Berlin Crocodiles (m) - Dresden Wolves (m)
+
+Host: Rheinland Lions
+Rheinland Lions (m) - Heidelberg Knights (m)
+Rheinland Lions (w) - Heidelberg Knights (w)
+
+Host: Kiel Koalas
+Kiel Koalas (m) - Zuffenhausen Giants (m)
+
+Byes: Hamburg Dockers, Frankfurt Redbacks, Munich Kangaroos
+
+**************
+
+Match day 7 (2022-07-16):
+
+Host: Zuffenhausen Giants
+Berlin Crocodiles (m) - Rheinland Lions (m)
+Berlin Crocodiles (w) - Rheinland Lions (w)
+Zuffenhausen Giants (m) - Berlin Crocodiles (m)
+Zuffenhausen Giants (m) - Rheinland Lions (m)
+
+Host: Kiel Koalas
+Kiel Koalas (m) - Hamburg Dockers (m)
+Kiel Koalas (m) - Frankfurt Redbacks (m)
+Hamburg Dockers (m) - Frankfurt Redbacks (m)
+
+Host: Dresden Wolves
+Heidelberg Knights (m) - Munich Kangaroos (m)
+Dresden Wolves (m) - Heidelberg Knights (m)
+Dresden Wolves (m) - Munich Kangaroos (m)
+
+**************
+
+Match day 8 (2022-07-30):
+
+Host: Munich Kangaroos
+Munich Kangaroos (m) - Berlin Crocodiles (m)
+
+Host: Hamburg Dockers
+Hamburg Dockers (m) - Heidelberg Knights (m)
+Hamburg Dockers (w) - Heidelberg Knights (w)
+
+Host: Zuffenhausen Giants
+Zuffenhausen Giants (m) - Frankfurt Redbacks (m)
+
+Byes: Kiel Koalas, Rheinland Lions, Dresden Wolves
+
+**************
+
+Match day 9 (2022-08-13):
+
+Host: Frankfurt Redbacks
+Frankfurt Redbacks (m) - Rheinland Lions (m)
+
+Host: Berlin Crocodiles
+Berlin Crocodiles (m) - Hamburg Dockers (m)
+Berlin Crocodiles (w) - Hamburg Dockers (w)
+
+Host: Dresden Wolves
+Dresden Wolves (m) - Kiel Koalas (m)
+
+Byes: Heidelberg Knights, Zuffenhausen Giants, Munich Kangaroos
+
+**************
+
+Match day 10 (2022-08-27):
+
+Host: Rheinland Lions
+Rheinland Lions (m) - Kiel Koalas (m)
+Kiel Koalas (m) - Munich Kangaroos (m)
+Rheinland Lions (m) - Munich Kangaroos (m)
+
+Host: Zuffenhausen Giants
+Zuffenhausen Giants (m) - Hamburg Dockers (m)
+Hamburg Dockers (m) - Dresden Wolves (m)
+Zuffenhausen Giants (m) - Dresden Wolves (m)
+
+Host: Berlin Crocodiles
+Berlin Crocodiles (m) - Frankfurt Redbacks (m)
+Berlin Crocodiles (m) - Heidelberg Knights (m)
+Berlin Crocodiles (w) - Heidelberg Knights (w)
+Frankfurt Redbacks (m) - Heidelberg Knights (m)
+
+**************
+
+Match day 11 (2022-09-10):
+
+Host: Dresden Wolves
+Dresden Wolves (m) - Rheinland Lions (m)
+
+Host: Heidelberg Knights
+Heidelberg Knights (m) - Kiel Koalas (m)
+
+Host: Zuffenhausen Giants
+Zuffenhausen Giants (m) - Munich Kangaroos (m)
+
+Byes: Hamburg Dockers, Berlin Crocodiles, Frankfurt Redbacks
+
+**************
+
+Match day 12 (2022-09-24):
+
+Host: Munich Kangaroos
+Munich Kangaroos (m) - Frankfurt Redbacks (m)
+
+Host: Kiel Koalas
+Kiel Koalas (m) - Berlin Crocodiles (m)
+
+Host: Rheinland Lions
+Rheinland Lions (m) - Hamburg Dockers (m)
+Rheinland Lions (w) - Hamburg Dockers (w)
+
+Byes: Heidelberg Knights, Zuffenhausen Giants, Dresden Wolves
+
+**************
+by club:
+KK (m): HD 2a, 7h, BC 4a, 12h, RL 4n, 10a, FR 3a, 7h, HK 1h, 11a, ZG 2n, 6h, MK 3n, 10n, DW 1h, 9a; byes: 5, 8 [6h, 10a/n, travel: 55h]
+HD (m): KK 2h, 7a, BC 1h, 9a, RL 3n, 12a, FR 1h, 7n, HK 3a, 8h, ZG 2h, 10a, MK 4a, 5h, DW 4n, 10n; byes: 6, 11 [6h, 10a/n, travel: 56h]
+BC (m): KK 4h, 12a, HD 1a, 9h, RL 4h, 7n, FR 1n, 10h, HK 2a, 10h, ZG 3n, 7a, MK 2n, 8a, DW 3a, 6h; byes: 5, 11 [6h, 10a/n, travel: 53h]
+RL (m): KK 4n, 10h, HD 3n, 12h, BC 4a, 7n, FR 2h, 9a, HK 3a, 6h, ZG 1n, 7a, MK 1a, 10h, DW 2h, 11a; byes: 5, 8 [6h, 10a/n, travel: 50h]
+FR (m): KK 3h, 7a, HD 1a, 7n, BC 1n, 10a, RL 2a, 9h, HK 4h, 10n, ZG 4h, 8a, MK 3h, 12a, DW 2n, 5h; byes: 6, 11 [6h, 10a/n, travel: 48h]
+HK (m): KK 1a, 11h, HD 3h, 8a, BC 2h, 10a, RL 3h, 6a, FR 4a, 10n, ZG 4n, 5h, MK 2h, 7n, DW 1n, 7a; byes: 9, 12 [6h, 10a/n, travel: 52h]
+ZG (m): KK 2n, 6a, HD 2a, 10h, BC 3n, 7h, RL 1n, 7h, FR 4a, 8h, HK 4n, 5a, MK 1a, 11h, DW 3a, 10h; byes: 9, 12 [6h, 10a/n, travel: 50h]
+MK (m): KK 3n, 10n, HD 4h, 5a, BC 2n, 8h, RL 1h, 10a, FR 3a, 12h, HK 2a, 7n, ZG 1h, 11a, DW 4h, 7a; byes: 6, 9 [6h, 10a/n, travel: 51h]
+DW (m): KK 1a, 9h, HD 4n, 10n, BC 3h, 6a, RL 2a, 11h, FR 2n, 5a, HK 1n, 7h, ZG 3h, 10a, MK 4a, 7h; byes: 8, 12 [6h, 10a/n, travel: 54h]
+HD (w): BC 1h, 9a, RL 3n, 12a, HK 3a, 8h; byes: 4, 5, 6, 7, 10, 11 [2h, 4a/n, travel: 25h]
+BC (w): HD 1a, 9h, RL 4h, 7n, HK 2a, 10h; byes: 3, 5, 6, 8, 11, 12 [3h, 3a/n, travel: 29h]
+RL (w): HD 3n, 12h, BC 4a, 7n, HK 3a, 6h; byes: 1, 5, 8, 9, 10, 11 [2h, 4a/n, travel: 24h]
+HK (w): HD 3h, 8a, BC 2h, 10a, RL 3h, 6a; byes: 1, 4, 5, 7, 9, 11, 12 [3h, 3a/n, travel: 28h]

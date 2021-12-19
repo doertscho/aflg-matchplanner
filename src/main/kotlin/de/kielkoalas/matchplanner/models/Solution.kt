@@ -1,5 +1,7 @@
 package de.kielkoalas.matchplanner.models
 
+import java.time.format.DateTimeFormatter
+
 data class Solution(
     val problem: Problem,
     val matchDayAssignments: Map<MatchDay, Set<Group>>
@@ -22,6 +24,7 @@ fun Solution.findMatchDaysAndGroupsForDuel(club1: Club, club2: Club): List<Pair<
 
 fun Solution.matchDaysToString(): String {
     val matchDays = matchDayAssignments.map { (matchDay, groups) ->
+        val date = problem.startDate.plusWeeks(2L * (matchDay.number - 1))
         val groupsFormatted = groups.mapNotNull { group ->
             if (group.clubs.size > 1) {
                 val pairs = group.clubs.flatMap { club1 ->
@@ -44,7 +47,7 @@ fun Solution.matchDaysToString(): String {
             ""
         else
             "Byes: ${byes.joinToString(", ") { it.name }}\n\n"
-        "Match day ${matchDay.number}:\n\n$groupsFormatted\n\n$byesFormatted**************"
+        "Match day ${matchDay.number} (${date.format(DateTimeFormatter.ISO_DATE)}):\n\n$groupsFormatted\n\n$byesFormatted**************"
     }
     return matchDays.joinToString("\n\n")
         // TODO: dynamicalise
@@ -76,7 +79,7 @@ fun Solution.summaryForClub(club: Club, team: String): String {
 fun Solution.allTeamMatchesToString(): String {
     return problem.clubs.flatMap { club ->
         club.teams.map { teamMatchesToString(club, it) }
-    }.joinToString("\n")
+    }.sortedBy { it[4] }.joinToString("\n")
         // TODO: dynamicalise
         .replace("ZG (w)", "ST (w)")
 }
@@ -91,6 +94,10 @@ fun Solution.teamMatchesToString(club: Club, team: String): String {
             }
         "${other.abbreviation} $matches"
     }
+    val byes = problem.matchDays.map { it.number }.filterNot { number ->
+        val regex = "${number}[ahn]".toRegex()
+        regex.containsMatchIn(matches)
+    }.joinToString(", ")
     val summary = summaryForClub(club, team)
-    return "${club.abbreviation} ($team): $matches $summary"
+    return "${club.abbreviation} ($team): $matches; byes: $byes $summary"
 }

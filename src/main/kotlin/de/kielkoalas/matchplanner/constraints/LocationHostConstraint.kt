@@ -17,18 +17,16 @@ class LocationHostConstraint(private val problem: Problem) : ConstraintSet {
         for ((matchDay, groupNo) in problem.getAllGroups()) {
             for (host in problem.clubs) {
                 for (guest in problem.clubs) {
-                    val teams = host.teams.intersect(guest.teams)
-                    for (team in teams) {
-                        val hostVariable = Host.get(solver, matchDay, groupNo, host, team)
-                        val key = "locationHost-${matchDay.number}-$groupNo-" +
-                                "${host.abbreviation}-${guest.abbreviation}-$team"
-                        val groupVariable = GroupAssignment.get(solver, matchDay, groupNo, guest)
-                        val locationVariable = Location.get(solver, matchDay, groupNo, host, guest, team)
-                        val constraint = solver.makeConstraint(0.0, 1.0, key)
-                        constraint.setCoefficient(hostVariable, 1.0)
-                        constraint.setCoefficient(groupVariable, 1.0)
-                        constraint.setCoefficient(locationVariable, -2.0)
-                    }
+                    val team = "m"
+                    val hostVariable = Host.get(solver, matchDay, groupNo, host, team)
+                    val key = "locationHost-${matchDay.number}-$groupNo-" +
+                            "${host.abbreviation}-${guest.abbreviation}-$team"
+                    val groupVariable = GroupAssignment.get(solver, matchDay, groupNo, guest)
+                    val locationVariable = Location.get(solver, matchDay, groupNo, host, guest, team)
+                    val constraint = solver.makeConstraint(0.0, 1.0, key)
+                    constraint.setCoefficient(hostVariable, 1.0)
+                    constraint.setCoefficient(groupVariable, 1.0)
+                    constraint.setCoefficient(locationVariable, -2.0)
                 }
             }
         }

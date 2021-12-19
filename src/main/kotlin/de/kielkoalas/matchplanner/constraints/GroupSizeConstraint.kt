@@ -18,7 +18,12 @@ class GroupSizeConstraint(private val problem: Problem) : ConstraintSet {
             val groupVariables = problem.clubs.map { club ->
                 GroupAssignment.get(solver, matchDay, groupNo, club)
             }
-            solver.buildSumConstraint(0.0, matchDay.groupSize.toDouble(), key, groupVariables)
+            val size = matchDay.groupSize
+            if (size == 3) {
+                solver.buildSumConstraint(3.0, 3.0, key, groupVariables)
+            } else {
+                solver.buildSumConstraint(0.0, matchDay.groupSize.toDouble(), key, groupVariables)
+            }
         }
     }
 }
