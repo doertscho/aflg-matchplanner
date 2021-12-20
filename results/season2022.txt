@@ -1,4 +1,5 @@
 === AFL Germany 2022 ===
+(see summeries by club at the end of this file)
 
 Match day 1 (2022-04-16):
 
@@ -235,73 +236,75 @@ Berlin Crocodiles (w) - All-German Flamingos (w)
 Byes: Zuffenhausen Giants (m), Munich Kangaroos (m), Dresden Wolves (m), Heidelberg Knights (w)
 
 **************
-by club:
+
+Summaries by club:
+
 Kiel Koalas (m):
-by team: HD 3 (a), 10 (h) | BC 3 (n), 7 (n) | RL 2 (n), 7 (a) | FR 2 (a), 10 (h) | HK 1 (h), 12 (a) | ZG 4 (n), 8 (h) | MK 1 (h), 11 (a) | DW 4 (a), 5 (h) | byes: 6, 9
+by opponent team: HD 3 (a), 10 (h) | BC 3 (n), 7 (n) | RL 2 (n), 7 (a) | FR 2 (a), 10 (h) | HK 1 (h), 12 (a) | ZG 4 (n), 8 (h) | MK 1 (h), 11 (a) | DW 4 (a), 5 (h) | byes: 6, 9
 by round: 1: HK (h), MK (h) | 2: RL (n), FR (a) | 3: HD (a), BC (n) | 4: ZG (n), DW (a) | 5: DW (h) | 6: bye | 7: BC (n), RL (a) | 8: ZG (h) | 9: bye | 10: HD (h), FR (h) | 11: MK (a) | 12: HK (a)
 summary: 4 home match days (1, 5, 8, 10), 6 away match days (2, 3, 4, 7, 11, 12), travel: 65h
 
 Hamburg Dockers (m):
-by team: KK 3 (h), 10 (a) | BC 3 (h), 8 (a) | RL 1 (h), 12 (a) | FR 4 (n), 10 (n) | HK 4 (a), 9 (h) | ZG 1 (h), 7 (a) | MK 2 (a), 5 (h) | DW 2 (n), 7 (n) | byes: 6, 11
+by opponent team: KK 3 (h), 10 (a) | BC 3 (h), 8 (a) | RL 1 (h), 12 (a) | FR 4 (n), 10 (n) | HK 4 (a), 9 (h) | ZG 1 (h), 7 (a) | MK 2 (a), 5 (h) | DW 2 (n), 7 (n) | byes: 6, 11
 by round: 1: RL (h), ZG (h) | 2: MK (a), DW (n) | 3: KK (h), BC (h) | 4: FR (n), HK (a) | 5: MK (h) | 6: bye | 7: ZG (a), DW (n) | 8: BC (a) | 9: HK (h) | 10: KK (a), FR (n) | 11: bye | 12: RL (a)
 summary: 4 home match days (1, 3, 5, 9), 6 away match days (2, 4, 7, 8, 10, 12), travel: 56h
 
 Berlin Crocodiles (m):
-by team: KK 3 (n), 7 (n) | HD 3 (a), 8 (h) | RL 4 (h), 7 (a) | FR 1 (n), 12 (h) | HK 2 (h), 10 (a) | ZG 2 (h), 11 (a) | MK 4 (h), 6 (a) | DW 1 (a), 10 (n) | byes: 5, 9
+by opponent team: KK 3 (n), 7 (n) | HD 3 (a), 8 (h) | RL 4 (h), 7 (a) | FR 1 (n), 12 (h) | HK 2 (h), 10 (a) | ZG 2 (h), 11 (a) | MK 4 (h), 6 (a) | DW 1 (a), 10 (n) | byes: 5, 9
 by round: 1: FR (n), DW (a) | 2: HK (h), ZG (h) | 3: KK (n), HD (a) | 4: RL (h), MK (h) | 5: bye | 6: MK (a) | 7: KK (n), RL (a) | 8: HD (h) | 9: bye | 10: HK (a), DW (n) | 11: ZG (a) | 12: FR (h)
 summary: 4 home match days (2, 4, 8, 12), 6 away match days (1, 3, 6, 7, 10, 11), travel: 57h
 
 Rheinland Lions (m):
-by team: KK 2 (n), 7 (h) | HD 1 (a), 12 (h) | BC 4 (a), 7 (h) | FR 2 (a), 9 (h) | HK 3 (h), 8 (a) | ZG 1 (n), 10 (n) | MK 4 (n), 10 (a) | DW 3 (h), 6 (a) | byes: 5, 11
+by opponent team: KK 2 (n), 7 (h) | HD 1 (a), 12 (h) | BC 4 (a), 7 (h) | FR 2 (a), 9 (h) | HK 3 (h), 8 (a) | ZG 1 (n), 10 (n) | MK 4 (n), 10 (a) | DW 3 (h), 6 (a) | byes: 5, 11
 by round: 1: HD (a), ZG (n) | 2: KK (n), FR (a) | 3: HK (h), DW (h) | 4: BC (a), MK (n) | 5: bye | 6: DW (a) | 7: KK (h), BC (h) | 8: HK (a) | 9: FR (h) | 10: ZG (n), MK (a) | 11: bye | 12: HD (h)
 summary: 4 home match days (3, 7, 9, 12), 6 away match days (1, 2, 4, 6, 8, 10), travel: 51h
 
 Frankfurt Redbacks (m):
-by team: KK 2 (h), 10 (a) | HD 4 (n), 10 (n) | BC 1 (n), 12 (a) | RL 2 (h), 9 (a) | HK 4 (a), 7 (h) | ZG 3 (a), 6 (h) | MK 3 (n), 7 (h) | DW 1 (a), 11 (h) | byes: 5, 8
+by opponent team: KK 2 (h), 10 (a) | HD 4 (n), 10 (n) | BC 1 (n), 12 (a) | RL 2 (h), 9 (a) | HK 4 (a), 7 (h) | ZG 3 (a), 6 (h) | MK 3 (n), 7 (h) | DW 1 (a), 11 (h) | byes: 5, 8
 by round: 1: BC (n), DW (a) | 2: KK (h), RL (h) | 3: ZG (a), MK (n) | 4: HD (n), HK (a) | 5: bye | 6: ZG (h) | 7: HK (h), MK (h) | 8: bye | 9: RL (a) | 10: KK (a), HD (n) | 11: DW (h) | 12: BC (a)
 summary: 4 home match days (2, 6, 7, 11), 6 away match days (1, 3, 4, 9, 10, 12), travel: 41h
 
 Heidelberg Knights (m):
-by team: KK 1 (a), 12 (h) | HD 4 (h), 9 (a) | BC 2 (a), 10 (h) | RL 3 (a), 8 (h) | FR 4 (h), 7 (a) | ZG 2 (n), 5 (a) | MK 1 (n), 7 (n) | DW 3 (n), 10 (h) | byes: 6, 11
+by opponent team: KK 1 (a), 12 (h) | HD 4 (h), 9 (a) | BC 2 (a), 10 (h) | RL 3 (a), 8 (h) | FR 4 (h), 7 (a) | ZG 2 (n), 5 (a) | MK 1 (n), 7 (n) | DW 3 (n), 10 (h) | byes: 6, 11
 by round: 1: KK (a), MK (n) | 2: BC (a), ZG (n) | 3: RL (a), DW (n) | 4: HD (h), FR (h) | 5: ZG (a) | 6: bye | 7: FR (a), MK (n) | 8: RL (h) | 9: HD (a) | 10: BC (h), DW (h) | 11: bye | 12: KK (h)
 summary: 4 home match days (4, 8, 10, 12), 6 away match days (1, 2, 3, 5, 7, 9), travel: 46h
 
 Zuffenhausen Giants (m):
-by team: KK 4 (n), 8 (a) | HD 1 (a), 7 (h) | BC 2 (a), 11 (h) | RL 1 (n), 10 (n) | FR 3 (h), 6 (a) | HK 2 (n), 5 (h) | MK 3 (h), 10 (a) | DW 4 (a), 7 (h) | byes: 9, 12
+by opponent team: KK 4 (n), 8 (a) | HD 1 (a), 7 (h) | BC 2 (a), 11 (h) | RL 1 (n), 10 (n) | FR 3 (h), 6 (a) | HK 2 (n), 5 (h) | MK 3 (h), 10 (a) | DW 4 (a), 7 (h) | byes: 9, 12
 by round: 1: HD (a), RL (n) | 2: BC (a), HK (n) | 3: FR (h), MK (h) | 4: KK (n), DW (a) | 5: HK (h) | 6: FR (a) | 7: HD (h), DW (h) | 8: KK (a) | 9: bye | 10: RL (n), MK (a) | 11: BC (h) | 12: bye
 summary: 4 home match days (3, 5, 7, 11), 6 away match days (1, 2, 4, 6, 8, 10), travel: 59h
 
 Munich Kangaroos (m):
-by team: KK 1 (a), 11 (h) | HD 2 (h), 5 (a) | BC 4 (a), 6 (h) | RL 4 (n), 10 (h) | FR 3 (n), 7 (a) | HK 1 (n), 7 (n) | ZG 3 (a), 10 (h) | DW 2 (h), 9 (a) | byes: 8, 12
+by opponent team: KK 1 (a), 11 (h) | HD 2 (h), 5 (a) | BC 4 (a), 6 (h) | RL 4 (n), 10 (h) | FR 3 (n), 7 (a) | HK 1 (n), 7 (n) | ZG 3 (a), 10 (h) | DW 2 (h), 9 (a) | byes: 8, 12
 by round: 1: KK (a), HK (n) | 2: HD (h), DW (h) | 3: FR (n), ZG (a) | 4: BC (a), RL (n) | 5: HD (a) | 6: BC (h) | 7: FR (a), HK (n) | 8: bye | 9: DW (a) | 10: RL (h), ZG (h) | 11: KK (h) | 12: bye
 summary: 4 home match days (2, 6, 10, 11), 6 away match days (1, 3, 4, 5, 7, 9), travel: 62h
 
 Dresden Wolves (m):
-by team: KK 4 (h), 5 (a) | HD 2 (n), 7 (n) | BC 1 (h), 10 (n) | RL 3 (a), 6 (h) | FR 1 (h), 11 (a) | HK 3 (n), 10 (a) | ZG 4 (h), 7 (a) | MK 2 (a), 9 (h) | byes: 8, 12
+by opponent team: KK 4 (h), 5 (a) | HD 2 (n), 7 (n) | BC 1 (h), 10 (n) | RL 3 (a), 6 (h) | FR 1 (h), 11 (a) | HK 3 (n), 10 (a) | ZG 4 (h), 7 (a) | MK 2 (a), 9 (h) | byes: 8, 12
 by round: 1: BC (h), FR (h) | 2: HD (n), MK (a) | 3: RL (a), HK (n) | 4: KK (h), ZG (h) | 5: KK (a) | 6: RL (h) | 7: HD (n), ZG (a) | 8: bye | 9: MK (h) | 10: BC (n), HK (a) | 11: FR (a) | 12: bye
 summary: 4 home match days (1, 4, 6, 9), 6 away match days (2, 3, 5, 7, 10, 11), travel: 58h
 
 Hamburg Dockers (w):
-by team: BC 3 (h), 8 (a) | RL 1 (h), 12 (a) | HK 4 (a), 9 (h) | AF 5 (h), 10 (a) | byes: 2, 6, 7, 11
+by opponent team: BC 3 (h), 8 (a) | RL 1 (h), 12 (a) | HK 4 (a), 9 (h) | AF 5 (h), 10 (a) | byes: 2, 6, 7, 11
 by round: 1: RL (h) | 2: bye | 3: BC (h) | 4: HK (a) | 5: AF (h) | 6: bye | 7: bye | 8: BC (a) | 9: HK (h) | 10: AF (a) | 11: bye | 12: RL (a)
 summary: 4 home match days (1, 3, 5, 9), 4 away match days (4, 8, 10, 12), travel: 27h
 
 Berlin Crocodiles (w):
-by team: HD 3 (a), 8 (h) | RL 4 (h), 7 (a) | HK 2 (h), 10 (a) | AF 6 (a), 12 (h) | byes: 1, 5, 9, 11
+by opponent team: HD 3 (a), 8 (h) | RL 4 (h), 7 (a) | HK 2 (h), 10 (a) | AF 6 (a), 12 (h) | byes: 1, 5, 9, 11
 by round: 1: bye | 2: HK (h) | 3: HD (a) | 4: RL (h) | 5: bye | 6: AF (a) | 7: RL (a) | 8: HD (h) | 9: bye | 10: HK (a) | 11: bye | 12: AF (h)
 summary: 4 home match days (2, 4, 8, 12), 4 away match days (3, 6, 7, 10), travel: 39h
 
 Rheinland Lions (w):
-by team: HD 1 (a), 12 (h) | BC 4 (a), 7 (h) | HK 3 (h), 8 (a) | AF 2 (a), 9 (h) | byes: 5, 6, 10, 11
+by opponent team: HD 1 (a), 12 (h) | BC 4 (a), 7 (h) | HK 3 (h), 8 (a) | AF 2 (a), 9 (h) | byes: 5, 6, 10, 11
 by round: 1: HD (a) | 2: AF (a) | 3: HK (h) | 4: BC (a) | 5: bye | 6: bye | 7: BC (h) | 8: HK (a) | 9: AF (h) | 10: bye | 11: bye | 12: HD (h)
 summary: 4 home match days (3, 7, 9, 12), 4 away match days (1, 2, 4, 8), travel: 29h
 
 Heidelberg Knights (w):
-by team: HD 4 (h), 9 (a) | BC 2 (a), 10 (h) | RL 3 (a), 8 (h) | AF 1 (a), 7 (a) | byes: 5, 6, 11, 12
+by opponent team: HD 4 (h), 9 (a) | BC 2 (a), 10 (h) | RL 3 (a), 8 (h) | AF 1 (a), 7 (a) | byes: 5, 6, 11, 12
 by round: 1: AF (a) | 2: BC (a) | 3: RL (a) | 4: HD (h) | 5: bye | 6: bye | 7: AF (a) | 8: RL (h) | 9: HD (a) | 10: BC (h) | 11: bye | 12: bye
 summary: 3 home match days (4, 8, 10), 5 away match days (1, 2, 3, 7, 9), travel: 43h
 
 All-German Flamingos (w):
-by team: HD 5 (a), 10 (h @ KK) | BC 6 (h @ MK), 12 (a) | RL 2 (h @ FR), 9 (a) | HK 1 (h @ KK), 7 (h @ FR) | byes: 3, 4, 8, 11
+by opponent team: HD 5 (a), 10 (h @ KK) | BC 6 (h @ MK), 12 (a) | RL 2 (h @ FR), 9 (a) | HK 1 (h @ KK), 7 (h @ FR) | byes: 3, 4, 8, 11
 by round: 1: HK (h @ KK) | 2: RL (h @ FR) | 3: bye | 4: bye | 5: HD (a) | 6: BC (h @ MK) | 7: HK (h @ FR) | 8: bye | 9: RL (a) | 10: HD (h @ KK) | 11: bye | 12: BC (a)
 summary: 5 home match days (1, 2, 6, 7, 10), 3 away match days (5, 9, 12), travel: 66h
