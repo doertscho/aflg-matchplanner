@@ -68,35 +68,63 @@ fun Solution.summaryForTeam(team: Team): String {
         .filter { mda -> mda.teams.contains(team) && others.any { mda.teams.contains(it) } }
         .map { team.clubs.map { club -> problem.getDistance(club, it.host) } }
     val travelTime = distances.sumBy { ds -> ds.map { d -> d.minutesByCar }.average().toInt() * 2 } / 60
-    val groups = others.flatMap { other ->
-        findMatchDaysAndGroupsForDuel(team, other).map { (_, group) -> group }
-    }
-    val homeMatches = groups.count { team.clubs.contains(it.host) }
-    val awayMatches = groups.size - homeMatches
-    return "[${homeMatches}h, ${awayMatches}a/n, travel: ${travelTime}h]"
+    val mda = matchDayAssignments.entries
+        .filter { it.value.any { group -> group.teams.contains(team) } }
+        .mapNotNull { (matchDay, groups) ->
+            val group = groups.find { group -> group.teams.contains(team) }
+            if (group == null) {
+                null
+            } else {
+                val isHome = team.clubs.contains(group.host)
+                Pair(matchDay, isHome)
+            }
+        }
+    val homeMatches = mda.filter { (_, isHome) -> isHome }.map { (matchDay, _) -> matchDay.number }
+    val awayMatches = mda.filterNot { (_, isHome) -> isHome }.map { (matchDay, _) -> matchDay.number }
+    return "summary: " +
+            "${homeMatches.size} home match days (${homeMatches.joinToString(", ")}), " +
+            "${awayMatches.size} away match days (${awayMatches.joinToString(", ")}), " +
+            "travel: ${travelTime}h"
 }
 
 fun Solution.allTeamMatchesToString(): String {
-    return problem.teams.joinToString("\n") { team ->
+    return problem.teams.joinToString("\n\n") { team ->
         teamMatchesToString(team)
     }
 }
 
 fun Solution.teamMatchesToString(team: Team): String {
     val others = problem.getOthers(team)
-    val matches = others.joinToString(", ") { other ->
+    val matchesByTeam = others.joinToString(" | ") { other ->
         val matches = findMatchDaysAndGroupsForDuel(team, other)
             .joinToString(", ") { (matchDay, group) ->
                 val homeAway = getHomeAway(group, team, other)
-                val host = if (homeAway == "h" && team.clubs.size > 1) "@${group.host.abbreviation}" else ""
-                "${matchDay.number}$homeAway$host"
+                val host = if (homeAway == "h" && team.clubs.size > 1) " @ ${group.host.abbreviation}" else ""
+                "${matchDay.number} ($homeAway$host)"
             }
         "${other.abbreviation} $matches"
     }
+
+    val matchesByRound = matchDayAssignments.map { (matchDay, groups) ->
+        val matches = groups.find { it.teams.contains(team) }?.let { group ->
+            val opponents = group.teams.filter { it.competition == team.competition && it != team }
+            opponents.joinToString(", ") { other ->
+                val homeAway = getHomeAway(group, team, other)
+                val host = if (homeAway == "h" && team.clubs.size > 1) " @ ${group.host.abbreviation}" else ""
+                "${other.abbreviation} ($homeAway$host)"
+            }
+        } ?: "bye"
+        "${matchDay.number}: $matches"
+    }.joinToString(" | ")
+
     val byes = problem.matchDays.map { it.number }.filterNot { number ->
-        val regex = " ${number}[ahn]".toRegex()
-        regex.containsMatchIn(matches)
+        val regex = " $number \\(".toRegex()
+        regex.containsMatchIn(matchesByTeam)
     }.joinToString(", ")
+
     val summary = summaryForTeam(team)
-    return "${team.abbreviation} (${team.competition}): $matches; byes: $byes $summary"
+    return "${team.name} (${team.competition}):\n" +
+            "by team: $matchesByTeam; byes: $byes\n" +
+            "by round: $matchesByRound\n" +
+            summary
 }

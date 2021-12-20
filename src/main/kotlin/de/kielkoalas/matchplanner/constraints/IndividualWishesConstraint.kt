@@ -28,9 +28,8 @@ class IndividualWishesConstraint(private val problem: Problem) : ConstraintSet {
         }
         solver.buildExactlyOneConstraint("munich-wants-to-play-in-hamburg", munichInHamburgVars)
 
-//        val hamburgTeams = problem.teams.filter { it.clubs.contains(hamburg) }
         val kielTeams = problem.teams.filter { it.abbreviation == "KK" }
-        val kielerWoche = problem.matchDays.find { it.number == 5 } ?: error("")
+        val kielerWoche = problem.matchDays.find { it.number == 6 } ?: error("")
         val groupVars = kielTeams.flatMap { team ->
             (kielerWoche.getGroupNumbers(team.competition)).map { groupNo ->
                 GroupAssignment.get(solver, team.competition, kielerWoche, groupNo, team)

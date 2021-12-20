@@ -119,7 +119,7 @@ val womensTeams = setOf(HD, BC, RL, HK).map { club ->
 fun main() {
 
     val problem = Problem(
-        startDate = LocalDate.parse("2022-04-23"),
+        startDate = LocalDate.parse("2022-04-16"),
         clubs = clubs,
         teams = mensTeams + womensTeams,
         pools = setOf(poolA, poolB, poolC),
@@ -136,6 +136,7 @@ fun main() {
             Dictionary.GROUP_SIZE.name,
             Dictionary.ONE_GROUP_PER_CLUB.name,
             Dictionary.ONE_HOST_PER_GROUP.name,
+            Dictionary.GROUP_TO_HAVE_HOST.name,
             Dictionary.HOST_IN_GROUP.name,
             Dictionary.HOST_TO_HAVE_GUESTS.name,
             Dictionary.ONE_MATCH_PER_ROUND_AGAINST_EACH.name,
@@ -147,6 +148,7 @@ fun main() {
             Dictionary.FULL_MATCHES_IN_POOL.name,
             Dictionary.FULL_MATCHES_OUTSIDE_POOL.name,
             Dictionary.NO_CONSECUTIVE_BYES.name,
+            Dictionary.CONSECUTIVE_AWAY_MATCHES.name,
             Dictionary.CLUB_TEAMS_PLAY_TOGETHER.name,
             Dictionary.CLUB_TEAMS_HOST_TOGETHER.name,
             Dictionary.INDIVIDUAL_WISHES.name,

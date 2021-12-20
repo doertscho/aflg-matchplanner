@@ -15,7 +15,7 @@ fun MatchDay.hasByes(problem: Problem, competition: String) =
     specByCompetition[competition]?.run {
         val involved = getNumberOfGroups(competition) * groupSize
         val total = problem.teams.filter { it.competition == competition }.size
-        involved < total
+        (involved < total) || (total % groupSize > 0)
     } ?: error("competition $competition not available")
 
 fun MatchDay.getNumberOfGroups(competition: String) =
