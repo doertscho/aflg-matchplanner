@@ -1,10 +1,7 @@
 package de.kielkoalas.matchplanner
 
 import de.kielkoalas.matchplanner.models.*
-import de.kielkoalas.matchplanner.variables.Duel
-import de.kielkoalas.matchplanner.variables.GroupAssignment
-import de.kielkoalas.matchplanner.variables.Host
-import de.kielkoalas.matchplanner.variables.Location
+import de.kielkoalas.matchplanner.variables.*
 import java.time.LocalDate
 
 val KK = Club("KK", "Kiel Koalas", setOf("m"))
@@ -133,6 +130,7 @@ fun main() {
             Host,
             Duel,
             Location,
+            JointTeamHost,
         ),
         constraints = setOf(
             Dictionary.GROUP_SIZE.name,
@@ -152,6 +150,8 @@ fun main() {
             Dictionary.CLUB_TEAMS_PLAY_TOGETHER.name,
             Dictionary.CLUB_TEAMS_HOST_TOGETHER.name,
             Dictionary.INDIVIDUAL_WISHES.name,
+            Dictionary.JOINT_TEAM_CLUBS_SHARE_HOSTING.name,
+            Dictionary.JOINT_TEAM_HOST_LINK.name,
         )
     )
 

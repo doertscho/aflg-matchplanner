@@ -25,6 +25,8 @@ object ConstraintResolver {
         Dictionary.FULL_MATCHES_OUTSIDE_POOL.name to { p -> FullMatchesOutsidePoolConstraint(p) },
         Dictionary.NO_CONSECUTIVE_BYES.name to { p -> NoConsecutiveByesConstraint(p) },
         Dictionary.INDIVIDUAL_WISHES.name to { p -> IndividualWishesConstraint(p) },
+        Dictionary.JOINT_TEAM_CLUBS_SHARE_HOSTING.name to { p -> JointTeamClubsShareHostingConstraint(p) },
+        Dictionary.JOINT_TEAM_HOST_LINK.name to { p -> JointTeamHostLinkConstraint(p) },
     )
 
     fun resolve(key: String, problem: Problem): ConstraintSet? {

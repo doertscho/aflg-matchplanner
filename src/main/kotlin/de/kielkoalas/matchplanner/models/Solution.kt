@@ -88,7 +88,8 @@ fun Solution.teamMatchesToString(team: Team): String {
         val matches = findMatchDaysAndGroupsForDuel(team, other)
             .joinToString(", ") { (matchDay, group) ->
                 val homeAway = getHomeAway(group, team, other)
-                "${matchDay.number}$homeAway"
+                val host = if (homeAway == "h" && team.clubs.size > 1) "@${group.host.abbreviation}" else ""
+                "${matchDay.number}$homeAway$host"
             }
         "${other.abbreviation} $matches"
     }

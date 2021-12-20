@@ -11,6 +11,8 @@ import de.kielkoalas.matchplanner.variables.Duel
 import de.kielkoalas.matchplanner.variables.GroupAssignment
 import de.kielkoalas.matchplanner.variables.Host
 import de.kielkoalas.matchplanner.variables.Location
+import java.util.*
+import kotlin.concurrent.scheduleAtFixedRate
 
 class Solver {
 
@@ -52,9 +54,8 @@ class Solver {
     }
 
     private fun setupSolver(problem: Problem, constraintSets: Collection<ConstraintSet>, solver: MPSolver) {
-        val variableSets = listOf(GroupAssignment, Host, Duel, Location)
         withStopWatch("Setup time") {
-            for (variableSet in variableSets) {
+            for (variableSet in problem.variables) {
                 variableSet.createInSolver(problem, solver)
             }
 
@@ -74,9 +75,17 @@ class Solver {
 
     private fun doCalculation(solver: MPSolver): Boolean {
         solver.setTimeLimit(60_000)
+        val timer = Timer()
+        var time = 0;
+        timer.scheduleAtFixedRate(1000L, 1000L) {
+            time += 1;
+            print(".")
+            if (time % 5 == 0) println(" $time seconds")
+        }
         val result = withStopWatch("Calculation time") {
             solver.solve()
         }
+        timer.cancel()
         println("Solver result status: $result")
         return result == MPSolver.ResultStatus.OPTIMAL
     }

@@ -36,8 +36,8 @@ class HomeAwayMatchesConstraint(private val problem: Problem) : ConstraintSet {
                 solver.buildSumConstraint(lb, ub, duelsKey, hostVariablesDuels)
 
             } else {
-                val womenLB = 1.0
-                val womenUB = 2.0
+                val womenLB = 3.0
+                val womenUB = 6.0
                 val womenKey = "homeMatches-${team.abbreviation}-women"
                 val hostVariablesWomen = problem.getAllGroups("w").map { (matchDay, groupNo) ->
                     Host.get(solver, matchDay, groupNo, team)
