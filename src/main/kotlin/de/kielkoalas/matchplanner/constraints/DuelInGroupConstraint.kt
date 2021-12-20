@@ -15,19 +15,19 @@ import de.kielkoalas.matchplanner.variables.GroupAssignment
 class DuelInGroupConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
-        for ((club1, club2, teams) in problem.getDuels()) {
-            // TODO: See other
-            val team = teams.first()
-            for ((matchDay, groupNo) in problem.getAllGroups()) {
-                val key = "duelInGroup-${matchDay.number}-$groupNo-" +
-                        "${club1.abbreviation}-vs-${club2.abbreviation}"
-                val duelVariable = Duel.get(solver, matchDay, groupNo, club1, club2, team)
-                val groupVariable1 = GroupAssignment.get(solver, matchDay, groupNo, club1)
-                val groupVariable2 = GroupAssignment.get(solver, matchDay, groupNo, club2)
-                val constraint = solver.makeConstraint(-1.0, 0.0, key)
-                constraint.setCoefficient(duelVariable, 2.0)
-                constraint.setCoefficient(groupVariable1, -1.0)
-                constraint.setCoefficient(groupVariable2, -1.0)
+        for (competition in problem.competitions) {
+            for ((team1, team2) in problem.getDuels(competition)) {
+                for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
+                    val key = "duelInGroup-${matchDay.number}-${competition}-$groupNo-" +
+                            "${team1.abbreviation}-vs-${team2.abbreviation}"
+                    val duelVariable = Duel.get(solver, matchDay, groupNo, team1, team2)
+                    val groupVariable1 = GroupAssignment.get(solver, competition, matchDay, groupNo, team1)
+                    val groupVariable2 = GroupAssignment.get(solver, competition, matchDay, groupNo, team2)
+                    val constraint = solver.makeConstraint(-1.0, 0.0, key)
+                    constraint.setCoefficient(duelVariable, 2.0)
+                    constraint.setCoefficient(groupVariable1, -1.0)
+                    constraint.setCoefficient(groupVariable2, -1.0)
+                }
             }
         }
     }

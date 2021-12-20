@@ -82,18 +82,21 @@ class Solver {
     }
 
     private fun buildSolution(problem: Problem, mpSolver: MPSolver): Solution {
-        val matchDayAssignments = problem.matchDays.map { matchDay ->
-            val groups: Set<Group> = matchDay.getGroupNumbers(problem).map { groupNo ->
-                val host = problem.clubs.find { club ->
-                    isSet(Host.get(mpSolver, matchDay, groupNo, club, "m")) // TODO: dynamicalise
-                } ?: throw IllegalStateException("No host in ${matchDay.number}:$groupNo")
-                val clubs = problem.clubs.filter { club ->
-                    isSet(GroupAssignment.get(mpSolver, matchDay, groupNo, club))
+        val matchDayAssignments = problem.matchDays.associateWith { matchDay ->
+            matchDay.getGroupNumbers("m").map { groupNo ->
+                val hosts = problem.teams.filter { team ->
+                    isSet(Host.get(mpSolver, matchDay, groupNo, team))
                 }
-                Group(host, clubs.toSet())
+                val hostClub = hosts.filter { it.clubs.size == 1 }.first().clubs.first()
+                val teams = problem.teams.filter { team ->
+                    isSet(GroupAssignment.get(mpSolver, team.competition, matchDay, groupNo, team))
+                }
+                val playingTeams = teams.filter { team ->
+                    teams.any { it != team && it.competition == team.competition }
+                }
+                Group(hostClub, playingTeams.toSet())
             }.toSet()
-            matchDay to groups
-        }.toMap()
+        }
         return Solution(problem, matchDayAssignments)
     }
 

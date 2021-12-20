@@ -8,9 +8,8 @@ import de.kielkoalas.matchplanner.models.*
 data class DuelKey(
     val matchDay: MatchDay,
     val groupNo: Int,
-    val club1: Club,
-    val club2: Club,
-    val team: String,
+    val team1: Team,
+    val team2: Team,
 )
 
 /**
@@ -24,21 +23,20 @@ object Duel : VariableSet<DuelKey> {
     override fun getKey(components: DuelKey): String {
         val matchDay = components.matchDay
         val groupNo = components.groupNo
-        val clubs = listOf(components.club1, components.club2).map{ it.name }.sorted()
-        val club1 = clubs[0]
-        val club2 = clubs[1]
-        val team = components.team
-        if (club1 == club2) {
-            throw IllegalArgumentException("Requesting duel of $club1 against itself")
+        val teams = listOf(components.team1, components.team2).map{ "${it.abbreviation}-${it.competition}" }.sorted()
+        val team1 = teams[0]
+        val team2 = teams[1]
+        if (team1 == team2) {
+            throw IllegalArgumentException("Requesting duel of $team1 against itself")
         }
-        return "${matchDay.number}${team}:${club1}-vs-${club2}@$groupNo"
+        return "${matchDay.number}:${team1}-vs-${team2}@$groupNo"
     }
 
     override fun createInSolver(problem: Problem, solver: MPSolver) {
-        for ((matchDay, groupNo) in problem.getAllGroups()) {
-            for ((club1, club2, teams) in problem.getDuels()) {
-                for (team in teams) {
-                    val key = getKey(DuelKey(matchDay, groupNo, club1, club2, team))
+        for (competition in problem.competitions) {
+            for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
+                for ((team1, team2) in problem.getDuels(competition)) {
+                    val key = getKey(DuelKey(matchDay, groupNo, team1, team2))
                     solver.makeBoolVar(key)
                 }
             }
@@ -46,9 +44,9 @@ object Duel : VariableSet<DuelKey> {
     }
 
     fun get(
-        solver: MPSolver, matchDay: MatchDay, groupNo: Int, club1: Club, club2: Club, team: String,
+        solver: MPSolver, matchDay: MatchDay, groupNo: Int, team1: Team, team2: Team,
     ): MPVariable {
-        val key = getKey(DuelKey(matchDay, groupNo, club1, club2, team))
+        val key = getKey(DuelKey(matchDay, groupNo, team1, team2))
         return solver.lookupVariableOrNull(key)
             ?: throw IllegalStateException("Variable $key has not been created in solver")
     }

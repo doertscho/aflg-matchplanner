@@ -13,16 +13,18 @@ import de.kielkoalas.matchplanner.variables.GroupAssignment
 class GroupSizeConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
-        for ((matchDay, groupNo) in problem.getAllGroups()) {
-            val key = "groupSize-${matchDay.number}-$groupNo"
-            val groupVariables = problem.clubs.map { club ->
-                GroupAssignment.get(solver, matchDay, groupNo, club)
-            }
-            val size = matchDay.groupSize
-            if (size == 3) {
-                solver.buildSumConstraint(3.0, 3.0, key, groupVariables)
-            } else {
-                solver.buildSumConstraint(0.0, matchDay.groupSize.toDouble(), key, groupVariables)
+        for (competition in problem.competitions) {
+            for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
+                val key = "groupSize-${matchDay.number}-$groupNo-$competition"
+                val groupVariables = problem.teams.filter { it.competition == competition }.map { team ->
+                    GroupAssignment.get(solver, competition, matchDay, groupNo, team)
+                }
+                val size = matchDay.specByCompetition[competition]?.groupSize ?: 2
+                if (size == 3) {
+                    solver.buildSumConstraint(3.0, 3.0, key, groupVariables)
+                } else {
+                    solver.buildSumConstraint(0.0, size.toDouble(), key, groupVariables)
+                }
             }
         }
     }

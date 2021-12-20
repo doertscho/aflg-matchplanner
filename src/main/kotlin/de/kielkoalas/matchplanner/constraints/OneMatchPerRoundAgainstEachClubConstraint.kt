@@ -11,15 +11,15 @@ import de.kielkoalas.matchplanner.variables.Duel
 class OneMatchPerRoundAgainstEachClubConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
-        val rounds = problem.matchDays.map { it.round }.distinct()
-        for (round in rounds) {
-            for ((club1, club2, teams) in problem.getDuels()) {
-                for (team in teams) {
-                    val key = "oneMatch-$team-${club1.abbreviation}-vs-${club2.abbreviation}-r$round"
-                    val duelVariables = problem.getAllGroups()
-                        .filter { (matchDay, _) -> matchDay.round == round }
+        for (competition in problem.competitions) {
+            val rounds = problem.matchDays.mapNotNull { it.specByCompetition[competition]?.round }.distinct()
+            for (round in rounds) {
+                for ((team1, team2) in problem.getDuels(competition)) {
+                    val key = "oneMatch-$competition-${team1.abbreviation}-vs-${team2.abbreviation}-r$round"
+                    val duelVariables = problem.getAllGroups(competition)
+                        .filter { (matchDay, _) -> matchDay.specByCompetition[competition]?.round == round }
                         .map { (matchDay, groupNo) ->
-                            Duel.get(solver, matchDay, groupNo, club1, club2, team)
+                            Duel.get(solver, matchDay, groupNo, team1, team2)
                         }
                     solver.buildExactlyOneConstraint(key, duelVariables)
                 }

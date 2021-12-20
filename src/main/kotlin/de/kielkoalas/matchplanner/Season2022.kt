@@ -65,20 +65,44 @@ val distances = mapOf(
 
 
 
-var no = 1;
 val matchDays = listOf(
-    MatchDay(no++, 3),
-    MatchDay(no++, 3),
-    MatchDay(no++, 3),
-    MatchDay(no++, 3),
-    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
-    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
-    MatchDay(no++, 3, round = 2),
-    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
-    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
-    MatchDay(no++, 3, round = 2),
-    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
-    MatchDay(no++, 2, numberOfGroups = 3, round = 2),
+    MatchDay(1, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(2))),
+    MatchDay(2, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(2))),
+    MatchDay(3, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(2))),
+    MatchDay(4, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(2))),
+    MatchDay(5, mapOf(
+        "m" to MatchDataSpec(2, round = 2),
+        "w" to MatchDataSpec(2))
+    ),
+    MatchDay(6, mapOf(
+        "m" to MatchDataSpec(2, round = 2),
+        "w" to MatchDataSpec(2))
+    ),
+    MatchDay(7, mapOf(
+        "m" to MatchDataSpec(3, round = 2),
+        "w" to MatchDataSpec(2, round = 2))
+    ),
+
+    MatchDay(8, mapOf(
+        "m" to MatchDataSpec(2, round = 2),
+        "w" to MatchDataSpec(2, round = 2))
+    ),
+    MatchDay(9, mapOf(
+        "m" to MatchDataSpec(2, round = 2),
+        "w" to MatchDataSpec(2, round = 2))
+    ),
+    MatchDay(10, mapOf(
+        "m" to MatchDataSpec(3, round = 2),
+        "w" to MatchDataSpec(2, round = 2))
+    ),
+    MatchDay(11, mapOf(
+        "m" to MatchDataSpec(2, round = 2),
+        "w" to MatchDataSpec(2, round = 2))
+    ),
+    MatchDay(12, mapOf(
+        "m" to MatchDataSpec(2, round = 2),
+        "w" to MatchDataSpec(2, round = 2))
+    ),
 )
 
 val poolA = Pool("Pool A", setOf(HD, BC, MK), "m")
@@ -92,7 +116,7 @@ val mensTeams = clubs.map { club ->
 val womensTeams = setOf(HD, BC, RL, HK).map { club ->
     Team(club.abbreviation, club.name, "w", setOf(club) )
 } + setOf(
-    Team("AF", name = "All-German Flamingos", team = "w", clubs = setOf(KK, MK, FR))
+    Team("AF", name = "All-German Flamingos", competition = "w", clubs = setOf(KK, MK, FR))
 )
 
 fun main() {

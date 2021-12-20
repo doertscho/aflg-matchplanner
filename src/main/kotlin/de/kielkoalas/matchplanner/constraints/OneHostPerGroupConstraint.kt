@@ -14,12 +14,18 @@ import de.kielkoalas.matchplanner.variables.Host
 class OneHostPerGroupConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
-        for ((matchDay, groupNo) in problem.getAllGroups()) {
-            val key = "oneHost-${matchDay.number}-$groupNo-m"
-            val hostConstraints = problem.clubs.map { club ->
-                Host.get(solver, matchDay, groupNo, club, "m") // TODO: dynamicalise
+        for (competition in problem.competitions) {
+            for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
+                val key = "oneHost-${matchDay.number}-$groupNo-$competition"
+                val hostConstraints = problem.teams.filter { it.competition == competition }.map { team ->
+                    Host.get(solver, matchDay, groupNo, team)
+                }
+                if (competition == "m") {
+                    solver.buildExactlyOneConstraint(key, hostConstraints)
+                } else {
+                    solver.buildAtMostOneConstraint(key, hostConstraints)
+                }
             }
-            solver.buildExactlyOneConstraint(key, hostConstraints)
         }
     }
 }

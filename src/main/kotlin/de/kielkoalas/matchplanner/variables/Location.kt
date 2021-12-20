@@ -3,17 +3,13 @@ package de.kielkoalas.matchplanner.variables
 import com.google.ortools.linearsolver.MPSolver
 import com.google.ortools.linearsolver.MPVariable
 import de.kielkoalas.matchplanner.VariableSet
-import de.kielkoalas.matchplanner.models.Club
-import de.kielkoalas.matchplanner.models.MatchDay
-import de.kielkoalas.matchplanner.models.Problem
-import de.kielkoalas.matchplanner.models.getAllGroups
+import de.kielkoalas.matchplanner.models.*
 
 data class LocationKey(
     val matchDay: MatchDay,
     val groupNo: Int,
     val hostClub: Club,
-    val guestClub: Club,
-    val team: String,
+    val guestTeam: Team,
 )
 
 /**
@@ -26,17 +22,16 @@ object Location : VariableSet<LocationKey> {
         val matchDay = components.matchDay
         val groupNo = components.groupNo
         val host = components.hostClub
-        val guest = components.guestClub
-        val team = components.team
-        return "${matchDay.number}:${host}-hosts-club-${guest}-$team@$groupNo"
+        val guest = components.guestTeam
+        return "${matchDay.number}-${guest.competition}:${host.abbreviation}-hosts-team-${guest.abbreviation}@$groupNo"
     }
 
     override fun createInSolver(problem: Problem, solver: MPSolver) {
-        for ((matchDay, groupNo) in problem.getAllGroups()) {
-            for (host in problem.clubs) {
-                for (guest in problem.clubs) {
-                    for (team in guest.teams) {
-                        val key = getKey(LocationKey(matchDay, groupNo, host, guest, team))
+        for (competition in problem.competitions) {
+            for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
+                for (hostClub in problem.teams.filter { it.competition == competition }.flatMap { it.clubs }) {
+                    for (guestTeam in problem.teams.filter { it.competition == competition }) {
+                        val key = getKey(LocationKey(matchDay, groupNo, hostClub, guestTeam))
                         solver.makeBoolVar(key)
                     }
                 }
@@ -45,9 +40,9 @@ object Location : VariableSet<LocationKey> {
     }
 
     fun get(
-        solver: MPSolver, matchDay: MatchDay, groupNo: Int, host: Club, guest: Club, team: String,
+        solver: MPSolver, matchDay: MatchDay, groupNo: Int, hostClub: Club, guestTeam: Team,
     ): MPVariable {
-        val key = getKey(LocationKey(matchDay, groupNo, host, guest, team))
+        val key = getKey(LocationKey(matchDay, groupNo, hostClub, guestTeam))
         return solver.lookupVariableOrNull(key)
             ?: throw IllegalStateException("Variable $key has not been created in solver")
     }

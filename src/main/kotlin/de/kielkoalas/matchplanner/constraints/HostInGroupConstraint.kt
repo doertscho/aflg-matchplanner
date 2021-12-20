@@ -14,12 +14,12 @@ import de.kielkoalas.matchplanner.variables.Host
 class HostInGroupConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
-        for ((matchDay, groupNo) in problem.getAllGroups()) {
-            for (club in problem.clubs) {
-                val groupVariable = GroupAssignment.get(solver, matchDay, groupNo, club)
-                for (team in club.teams) {
-                    val key = "hostInGroup-${matchDay.number}-$groupNo-${club.abbreviation}-$team"
-                    val hostVariable = Host.get(solver, matchDay, groupNo, club, team)
+        for (competition in problem.competitions) {
+            for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
+                for (team in problem.teams.filter { it.competition == competition }) {
+                    val key = "hostInGroup-${matchDay.number}-$groupNo-${team.abbreviation}-$competition"
+                    val hostVariable = Host.get(solver, matchDay, groupNo, team)
+                    val groupVariable = GroupAssignment.get(solver, competition, matchDay, groupNo, team)
                     solver.buildImplicationConstraint(key, hostVariable, groupVariable)
                 }
             }

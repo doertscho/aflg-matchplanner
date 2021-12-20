@@ -2,5 +2,5 @@ package de.kielkoalas.matchplanner.models
 
 data class Group(
     val host: Club,
-    val clubs: Set<Club>,
+    val teams: Set<Team>,
 )

@@ -13,13 +13,15 @@ import de.kielkoalas.matchplanner.variables.GroupAssignment
 class OneGroupPerClubConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
-        for (matchDay in problem.matchDays) {
-            for (club in problem.clubs) {
-                val key = "oneGroupPerClub-${matchDay.number}-${club.abbreviation}"
-                val groupVariables = matchDay.getGroupNumbers(problem).map { groupNo ->
-                    GroupAssignment.get(solver, matchDay, groupNo, club)
+        for (competition in problem.competitions) {
+            for (matchDay in problem.matchDays) {
+                for (team in problem.teams.filter { it.competition == competition }) {
+                    val key = "oneGroupPerClub-${matchDay.number}-${team.abbreviation}-$competition"
+                    val groupVariables = matchDay.getGroupNumbers(competition).map { groupNo ->
+                        GroupAssignment.get(solver, competition, matchDay, groupNo, team)
+                    }
+                    solver.buildAtMostOneConstraint(key, groupVariables)
                 }
-                solver.buildAtMostOneConstraint(key, groupVariables)
             }
         }
     }

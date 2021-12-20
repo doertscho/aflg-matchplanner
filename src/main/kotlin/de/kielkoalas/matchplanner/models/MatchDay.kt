@@ -2,13 +2,26 @@ package de.kielkoalas.matchplanner.models
 
 data class MatchDay(
     val number: Int,
+    val specByCompetition: Map<String, MatchDataSpec>,
+)
+
+data class MatchDataSpec(
     val groupSize: Int,
-    val numberOfGroups: Int? = null,
+    val numberOfGroups: Int = 3,
     val round: Int = 1,
 )
 
-fun MatchDay.getNumberOfGroups(problem: Problem) =
-    numberOfGroups ?: problem.clubs.size / groupSize
+fun MatchDay.hasByes(problem: Problem, competition: String) =
+    specByCompetition[competition]?.run {
+        val involved = getNumberOfGroups(competition) * groupSize
+        val total = problem.teams.filter { it.competition == competition }.size
+        involved < total
+    } ?: error("competition $competition not available")
 
-fun MatchDay.getGroupNumbers(problem: Problem) =
-    1 .. getNumberOfGroups(problem)
+fun MatchDay.getNumberOfGroups(competition: String) =
+    specByCompetition[competition]?.run {
+        numberOfGroups
+    } ?: error("competition $competition not available")
+
+fun MatchDay.getGroupNumbers(competition: String) =
+    1 .. getNumberOfGroups(competition)

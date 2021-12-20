@@ -3,35 +3,42 @@ package de.kielkoalas.matchplanner.variables
 import com.google.ortools.linearsolver.MPSolver
 import com.google.ortools.linearsolver.MPVariable
 import de.kielkoalas.matchplanner.VariableSet
-import de.kielkoalas.matchplanner.models.Club
-import de.kielkoalas.matchplanner.models.MatchDay
-import de.kielkoalas.matchplanner.models.Problem
-import de.kielkoalas.matchplanner.models.getAllGroups
+import de.kielkoalas.matchplanner.models.*
+
+data class GroupAssignmentKey(
+    val competition: String,
+    val matchDay: MatchDay,
+    val groupNo: Int,
+    val team: Team,
+)
 
 /**
  * A set of variables G where G(m, n, c) = 1 iff club c is part of group n
  * on match day m, 0 otherwise.
  */
-object GroupAssignment : VariableSet<Triple<MatchDay, Int, Club>> {
+object GroupAssignment : VariableSet<GroupAssignmentKey> {
 
-    override fun getKey(components: Triple<MatchDay, Int, Club>): String {
-        val matchDay = components.first
-        val groupNo = components.second
-        val club = components.third
-        return "${matchDay.number}:${club.abbreviation}-in-${groupNo}"
+    override fun getKey(components: GroupAssignmentKey): String {
+        val competition = components.competition
+        val matchDay = components.matchDay
+        val groupNo = components.groupNo
+        val team = components.team
+        return "${matchDay.number}-${competition}:${team.abbreviation}-in-${groupNo}"
     }
 
     override fun createInSolver(problem: Problem, solver: MPSolver) {
-        for ((matchDay, groupNo) in problem.getAllGroups()) {
-            for (club in problem.clubs) {
-                val key = getKey(Triple(matchDay, groupNo, club))
-                solver.makeBoolVar(key)
+        for (competition in problem.competitions) {
+            for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
+                for (team in problem.teams.filter { it.competition == competition }) {
+                    val key = getKey(GroupAssignmentKey(competition, matchDay, groupNo, team))
+                    solver.makeBoolVar(key)
+                }
             }
         }
     }
 
-    fun get(solver: MPSolver, matchDay: MatchDay, groupNo: Int, club: Club): MPVariable {
-        val key = getKey(Triple(matchDay, groupNo, club))
+    fun get(solver: MPSolver, competition: String, matchDay: MatchDay, groupNo: Int, team: Team): MPVariable {
+        val key = getKey(GroupAssignmentKey(competition, matchDay, groupNo, team))
         return solver.lookupVariableOrNull(key)
             ?: throw IllegalStateException("Variable $key has not been created in solver")
     }

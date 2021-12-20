@@ -9,7 +9,7 @@ data class Problem(
     val distances: Map<Pair<Club, Club>, Distance>,
     val pools: Set<Pool> = setOf(),
     val teams: Set<Team> = setOf(),
-    val competitions: Set<String> = teams.map { it.team }.distinct().toSet(),
+    val competitions: Set<String> = teams.map { it.competition }.distinct().toSet(),
 
     val startDate: LocalDate,
 
@@ -17,24 +17,21 @@ data class Problem(
     val constraints: Set<String>,
 )
 
-fun Problem.getTeams(): Set<String> = clubs.flatMap { it.teams }.distinct().toSet()
+fun Problem.getOthers(team: Team) =
+    teams.filter { it != team && it.competition == team.competition }
 
-fun Problem.getOthers(club: Club, team: String) =
-    clubs.filter { it != club && it.teams.contains(team) }
-
-fun Problem.getDuels(): List<Triple<Club, Club, Set<String>>> {
-    val sorted = clubs.sortedBy { it.name }
-    return sorted.flatMapIndexed { index: Int, club1: Club ->
-        sorted.drop(index + 1).map { club2: Club ->
-            val teams = club1.teams.intersect(club2.teams)
-            Triple(club1, club2, teams)
+fun Problem.getDuels(competition: String): List<Pair<Team, Team>> {
+    val teamsInComp = teams.filter { it.competition == competition }
+    return teamsInComp.flatMapIndexed { index: Int, team1: Team ->
+        teamsInComp.drop(index + 1).map { team2: Team ->
+            Pair(team1, team2)
         }
     }
 }
 
-fun Problem.getAllGroups(): List<Pair<MatchDay, Int>> {
+fun Problem.getAllGroups(competition: String): List<Pair<MatchDay, Int>> {
     return matchDays.flatMap { matchDay ->
-        matchDay.getGroupNumbers(this).map { Pair(matchDay, it) }
+        matchDay.getGroupNumbers(competition).map { Pair(matchDay, it) }
     }
 }
 

@@ -14,19 +14,22 @@ import de.kielkoalas.matchplanner.variables.Location
 class LocationHostConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
-        for ((matchDay, groupNo) in problem.getAllGroups()) {
-            for (host in problem.clubs) {
-                for (guest in problem.clubs) {
-                    val team = "m"
-                    val hostVariable = Host.get(solver, matchDay, groupNo, host, team)
-                    val key = "locationHost-${matchDay.number}-$groupNo-" +
-                            "${host.abbreviation}-${guest.abbreviation}-$team"
-                    val groupVariable = GroupAssignment.get(solver, matchDay, groupNo, guest)
-                    val locationVariable = Location.get(solver, matchDay, groupNo, host, guest, team)
-                    val constraint = solver.makeConstraint(0.0, 1.0, key)
-                    constraint.setCoefficient(hostVariable, 1.0)
-                    constraint.setCoefficient(groupVariable, 1.0)
-                    constraint.setCoefficient(locationVariable, -2.0)
+        for (competition in problem.competitions) {
+            for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
+                for (host in problem.teams.filter { it.competition == competition }) {
+                    if (host.clubs.size > 1) continue
+                    val hostClub = host.clubs.first()
+                    for (guest in problem.teams.filter { it.competition == competition }) {
+                        val hostVariable = Host.get(solver, matchDay, groupNo, host)
+                        val key = "locationHost-${matchDay.number}-$groupNo-" +
+                                "${host.abbreviation}-${guest.abbreviation}-$competition"
+                        val groupVariable = GroupAssignment.get(solver, competition, matchDay, groupNo, guest)
+                        val locationVariable = Location.get(solver, matchDay, groupNo, hostClub, guest)
+                        val constraint = solver.makeConstraint(0.0, 1.0, key)
+                        constraint.setCoefficient(hostVariable, 1.0)
+                        constraint.setCoefficient(groupVariable, 1.0)
+                        constraint.setCoefficient(locationVariable, -2.0)
+                    }
                 }
             }
         }
