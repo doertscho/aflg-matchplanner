@@ -149,7 +149,7 @@ fun main() {
             Dictionary.FULL_MATCHES_OUTSIDE_POOL.name,
             Dictionary.NO_CONSECUTIVE_BYES.name,
             Dictionary.CONSECUTIVE_AWAY_MATCHES.name,
-            Dictionary.CLUB_TEAMS_PLAY_TOGETHER.name,
+//            Dictionary.CLUB_TEAMS_PLAY_TOGETHER.name,
             Dictionary.CLUB_TEAMS_HOST_TOGETHER.name,
             Dictionary.INDIVIDUAL_WISHES.name,
             Dictionary.JOINT_TEAM_CLUBS_SHARE_HOSTING.name,

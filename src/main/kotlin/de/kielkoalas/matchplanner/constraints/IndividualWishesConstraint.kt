@@ -30,11 +30,14 @@ class IndividualWishesConstraint(private val problem: Problem) : ConstraintSet {
 
         val kielTeams = problem.teams.filter { it.abbreviation == "KK" }
         val kielerWoche = problem.matchDays.find { it.number == 6 } ?: error("")
+        val wacken = problem.matchDays.find { it.number == 9 } ?: error("")
         val groupVars = kielTeams.flatMap { team ->
             (kielerWoche.getGroupNumbers(team.competition)).map { groupNo ->
                 GroupAssignment.get(solver, team.competition, kielerWoche, groupNo, team)
+            } + (wacken.getGroupNumbers(team.competition)).map { groupNo ->
+                GroupAssignment.get(solver, team.competition, wacken, groupNo, team)
             }
         }
-        solver.buildSumConstraint(0.0, 0.0, "kiwo", groupVars)
+        solver.buildSumConstraint(0.0, 0.0, "kiwo-wacken", groupVars)
     }
 }
