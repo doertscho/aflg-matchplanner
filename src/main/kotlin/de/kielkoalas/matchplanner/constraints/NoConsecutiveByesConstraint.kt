@@ -13,7 +13,7 @@ class NoConsecutiveByesConstraint(private val problem: Problem) : ConstraintSet 
 
     override fun createInSolver(solver: MPSolver) {
         for (competition in problem.competitions) {
-            val threshold = if (competition == "m") 2 else 3
+            val threshold = if (competition == "m") 2 else 2
             val matchDays = problem.matchDays.filter { it.hasByes(problem, competition) }.sortedBy { it.number }
             for (team in problem.teams.filter { it.competition == competition }) {
                 for (matchDaySets in matchDays.windowed(threshold, 1)) {
