@@ -74,7 +74,7 @@ class Solver {
     }
 
     private fun doCalculation(solver: MPSolver): Boolean {
-        solver.setTimeLimit(60_000)
+        solver.setTimeLimit(60L * 60_000)
         val timer = Timer()
         var time = 0;
         timer.scheduleAtFixedRate(1000L, 1000L) {
@@ -96,7 +96,7 @@ class Solver {
                 val hosts = problem.teams.filter { team ->
                     isSet(Host.get(mpSolver, matchDay, groupNo, team))
                 }
-                val hostClub = hosts.filter { it.clubs.size == 1 }.first().clubs.first()
+                val hostClub = hosts.first { it.clubs.size == 1 }.clubs.first()
                 val teams = problem.teams.filter { team ->
                     isSet(GroupAssignment.get(mpSolver, team.competition, matchDay, groupNo, team))
                 }

@@ -39,17 +39,5 @@ class IndividualWishesConstraint(private val problem: Problem) : ConstraintSet {
                 GroupAssignment.get(solver, kiel.competition, nine, groupNo, kiel)
             }
         solver.buildSumConstraint(0.0, 0.0, "kiel-byes", groupVars)
-
-        // shakeup to prevent munich-frankfurt-kiel triple with flamingos playing elsewhere
-        val frankfurt = problem.teams.find { it.abbreviation == "FR" } ?: error("")
-        val flamingos = problem.teams.find { it.abbreviation == "AF" } ?: error("")
-        for ((matchDay, groupNo) in problem.getAllGroups("m")) {
-            val key = "not-all-flamingos-together-${matchDay.number}-${groupNo}"
-            val constraint = solver.makeConstraint(-1.0, 2.0, key)
-            constraint.setCoefficient(GroupAssignment.get(solver, "m", matchDay, groupNo, kiel), 1.0)
-            constraint.setCoefficient(GroupAssignment.get(solver, "m", matchDay, groupNo, frankfurt), 1.0)
-            constraint.setCoefficient(GroupAssignment.get(solver, "m", matchDay, groupNo, munich), 1.0)
-            constraint.setCoefficient(GroupAssignment.get(solver, "w", matchDay, groupNo, flamingos), -1.0)
-        }
     }
 }

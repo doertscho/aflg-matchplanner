@@ -2,6 +2,7 @@ package de.kielkoalas.matchplanner
 
 import de.kielkoalas.matchplanner.models.*
 import de.kielkoalas.matchplanner.variables.*
+import java.io.File
 import java.time.LocalDate
 
 val KK = Club("KK", "Kiel Koalas", setOf("m"))
@@ -160,4 +161,7 @@ fun main() {
     val solution = Solver().solve(problem)
 
     println(solution)
+
+    val fileName = "results/result-${System.currentTimeMillis()}.txt"
+    File(fileName).writeText(solution.toString())
 }

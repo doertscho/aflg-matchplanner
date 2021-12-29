@@ -14,7 +14,7 @@ class DistanceConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
         for (competition in problem.competitions) {
-            val ub = 60 * (if (competition == "m") 65.0 else 40.0)
+            val ub = 60 * (if (competition == "m") 60.0 else 40.0)
             for (guest in problem.teams.filter { it.competition == competition }) {
                 if (guest.clubs.size > 1) continue
                 val guestClub = guest.clubs.first()
