@@ -99,7 +99,11 @@ fun Solution.teamMatchesToString(team: Team): String {
         val matches = findMatchDaysAndGroupsForDuel(team, other)
             .joinToString(", ") { (matchDay, group) ->
                 val homeAway = getHomeAway(group, team, other)
-                val host = if (homeAway == "h" && team.clubs.size > 1) " @ ${group.host.abbreviation}" else ""
+                val host = if (homeAway == "h") {
+                    if (team.clubs.size > 1) " @ ${group.host.abbreviation}" else ""
+                } else {
+                    if (other.clubs.size > 1) " @ ${group.host.abbreviation}" else ""
+                }
                 "${matchDay.number} ($homeAway$host)"
             }
         "${other.abbreviation} $matches"
@@ -110,7 +114,11 @@ fun Solution.teamMatchesToString(team: Team): String {
             val opponents = group.teams.filter { it.competition == team.competition && it != team }
             opponents.joinToString(", ") { other ->
                 val homeAway = getHomeAway(group, team, other)
-                val host = if (homeAway == "h" && team.clubs.size > 1) " @ ${group.host.abbreviation}" else ""
+                val host = if (homeAway == "h") {
+                    if (team.clubs.size > 1) " @ ${group.host.abbreviation}" else ""
+                } else {
+                    if (other.clubs.size > 1) " @ ${group.host.abbreviation}" else ""
+                }
                 "${other.abbreviation} ($homeAway$host)"
             }
         } ?: "bye"

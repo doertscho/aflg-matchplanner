@@ -15,17 +15,13 @@ class HomeAwayMatchesConstraint(private val problem: Problem) : ConstraintSet {
     override fun createInSolver(solver: MPSolver) {
         for (team in problem.teams) {
             if (team.competition == "m") {
-                val balance = 2.0
-                val lb = balance - 0.0
-                val ub = balance + 1.0
-
                 val keyTriples = "homeMatches-${team.abbreviation}-triples"
                 val hostVariablesTriples = problem.getAllGroups("m").mapNotNull { (matchDay, groupNo) ->
                     if (matchDay.specByCompetition["m"]?.groupSize == 3)
                         Host.get(solver, matchDay, groupNo, team)
                     else null
                 }
-                solver.buildSumConstraint(lb, ub, keyTriples, hostVariablesTriples)
+                solver.buildSumConstraint(1.0, 2.0, keyTriples, hostVariablesTriples)
 
                 val duelsKey = "homeMatches-${team.abbreviation}-duels"
                 val hostVariablesDuels = problem.getAllGroups("m").mapNotNull { (matchDay, groupNo) ->
@@ -33,16 +29,14 @@ class HomeAwayMatchesConstraint(private val problem: Problem) : ConstraintSet {
                         Host.get(solver, matchDay, groupNo, team)
                     else null
                 }
-                solver.buildSumConstraint(lb, ub, duelsKey, hostVariablesDuels)
+                solver.buildSumConstraint(2.0, 2.0, duelsKey, hostVariablesDuels)
 
             } else {
-                val womenLB = 4.0
-                val womenUB = 6.0
                 val womenKey = "homeMatches-${team.abbreviation}-women"
                 val hostVariablesWomen = problem.getAllGroups("w").map { (matchDay, groupNo) ->
                     Host.get(solver, matchDay, groupNo, team)
                 }
-                solver.buildSumConstraint(womenLB, womenUB, womenKey, hostVariablesWomen)
+                solver.buildSumConstraint(3.0, 5.0, womenKey, hostVariablesWomen)
             }
         }
     }
