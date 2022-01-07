@@ -8,7 +8,9 @@ Find summaries by club at the end of this file.
 featuring players from the Munich Kangaroos, Frankfurt Redcats and Kiel Koalas women teams.
 The final team name is yet to be decided.
 
-## Match day  1 (2022-04-09)  
+## Match days
+
+### Match day  1 (2022-04-09)  
 
 **Host: Dresden Wolves**  
 Dresden Wolves (m) - Frankfurt Redbacks (m)  
@@ -24,7 +26,7 @@ Red Koalaroos (w) - Berlin Crocodiles (w)
 **Byes:** Berlin Crocodiles (m), Rheinland Lions (m), Munich Kangaroos (m), Rheinland Lions (w)  
 
 
-## Match day  2 (2022-04-23)  
+### Match day  2 (2022-04-23)  
 
 **Host: Rheinland Lions**  
 Rheinland Lions (m) - Kiel Koalas (m)  
@@ -46,7 +48,7 @@ Berlin Crocodiles (w) - Heidelberg Knights (w)
 **Byes:** Red Koalaroos (w)  
 
 
-## Match day  3 (2022-05-07)  
+### Match day  3 (2022-05-07)  
 
 **Host: Zuffenhausen Giants**  
 Frankfurt Redbacks (m) - Heidelberg Knights (m)  
@@ -68,7 +70,7 @@ Berlin Crocodiles (w) - Rheinland Lions (w)
 **Byes:** Heidelberg Knights (w)  
 
 
-## Match day  4 (2022-05-21)  
+### Match day  4 (2022-05-21)  
 
 **Host: Munich Kangaroos**  
 Berlin Crocodiles (m) - Zuffenhausen Giants (m)  
@@ -90,7 +92,7 @@ Rheinland Lions (w) - Berlin Crocodiles (w)
 **Byes:** Hamburg Dockers (w)  
 
 
-## Match day  5 (2022-06-04)  
+### Match day  5 (2022-06-04)  
 
 **Host: Hamburg Dockers**  
 Hamburg Dockers (m) - Zuffenhausen Giants (m)  
@@ -112,7 +114,7 @@ Heidelberg Knights (w) - Rheinland Lions (w)
 **Byes:** Red Koalaroos (w)  
 
 
-## Match day  6 (2022-06-18)
+### Match day  6 (2022-06-18)
 *NOTE: Match day may need to be postponed by a week
 if the Euro Cup in Stirling is played on this weekend.*
 
@@ -130,7 +132,7 @@ Zuffenhausen Giants (m) - Munich Kangaroos (m)
 **Byes:** Kiel Koalas (m), Frankfurt Redbacks (m), Heidelberg Knights (m), Berlin Crocodiles (w)  
 
 
-## Match day  7 (2022-07-02)  
+### Match day  7 (2022-07-02)  
 
 **Host: Kiel Koalas**  
 Kiel Koalas (m) - Heidelberg Knights (m)  
@@ -148,7 +150,7 @@ Berlin Crocodiles (w) - Hamburg Dockers (w)
 **Byes:** Hamburg Dockers (m), Zuffenhausen Giants (m), Dresden Wolves (m), Rheinland Lions (w)  
 
 
-## Match day  8 (2022-07-16)  
+### Match day  8 (2022-07-16)  
 
 **Host: Heidelberg Knights**  
 Heidelberg Knights (m) - Zuffenhausen Giants (m)  
@@ -164,7 +166,7 @@ Red Koalaroos (w) - Rheinland Lions (w)
 **Byes:** Kiel Koalas (m), Rheinland Lions (m), Frankfurt Redbacks (m), Hamburg Dockers (w)  
 
 
-## Match day  9 (2022-07-30)  
+### Match day  9 (2022-07-30)  
 
 **Host: Berlin Crocodiles**  
 Berlin Crocodiles (m) - Kiel Koalas (m)  
@@ -180,7 +182,7 @@ Hamburg Dockers (w) - Rheinland Lions (w)
 **Byes:** Heidelberg Knights (m), Zuffenhausen Giants (m), Dresden Wolves (m), Heidelberg Knights (w)  
 
 
-## Match day  10 (2022-08-13)  
+### Match day  10 (2022-08-13)  
 
 **Host: Zuffenhausen Giants**  
 Zuffenhausen Giants (m) - Dresden Wolves (m)  
