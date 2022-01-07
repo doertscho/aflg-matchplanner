@@ -205,67 +205,67 @@ Rheinland Lions (w) - Heidelberg Knights (w)
 **By round:** 1: ZG (h) | 2: RL (a), ZG (n) | 3: HD (a), MK (n) | 4: HK (n), DW (a) | 5: BC (h), FR (h) | 6: bye | 7: HK (h) | 8: bye | 9: BC (a) | 10: FR (a)  
 **Season summary:** 3 home match days (1, 5, 7), 5 away match days (3, 2, 4, 9, 10), travel: 42h  
 
-### Hamburg Dockers (m):
+### Hamburg Dockers (m)
 **By opponent:** KK 3 (h) | BC 2 (a), 6 (h) | RL 4 (a) | FR 4 (n), 9 (h) | HK 1 (a), 2 (n) | ZG 5 (h) | MK 3 (h), 8 (a) | DW 5 (h); byes: 7, 10  
 **By round:** 1: HK (a) | 2: BC (a), HK (n) | 3: KK (h), MK (h) | 4: RL (a), FR (n) | 5: ZG (h), DW (h) | 6: BC (h) | 7: bye | 8: MK (a) | 9: FR (h) | 10: bye  
 **Season summary:** 4 home match days (3, 5, 6, 9), 4 away match days (1, 2, 4, 8), travel: 40h  
 
-### Berlin Crocodiles (m):
+### Berlin Crocodiles (m)
 **By opponent:** KK 5 (a), 9 (h) | HD 2 (h), 6 (a) | RL 3 (h) | FR 5 (n) | HK 2 (h) | ZG 4 (n) | MK 4 (a), 7 (h) | DW 3 (h), 8 (a); byes: 1, 10  
 **By round:** 1: bye | 2: HD (h), HK (h) | 3: RL (h), DW (h) | 4: ZG (n), MK (a) | 5: KK (a), FR (n) | 6: HD (a) | 7: MK (h) | 8: DW (a) | 9: KK (h) | 10: bye  
 **Season summary:** 4 home match days (3, 2, 7, 9), 4 away match days (4, 5, 6, 8), travel: 29h  
 
-### Rheinland Lions (m):
+### Rheinland Lions (m)
 **By opponent:** KK 2 (h) | HD 4 (h) | BC 3 (a) | FR 4 (h), 7 (a) | HK 5 (a), 10 (h) | ZG 2 (h) | MK 5 (n), 9 (a) | DW 3 (n), 6 (h); byes: 1, 8  
 **By round:** 1: bye | 2: KK (h), ZG (h) | 3: BC (a), DW (n) | 4: HD (h), FR (h) | 5: HK (a), MK (n) | 6: DW (h) | 7: FR (a) | 8: bye | 9: MK (a) | 10: HK (h)  
 **Season summary:** 4 home match days (2, 4, 6, 10), 4 away match days (3, 5, 7, 9), travel: 31h  
 
-### Frankfurt Redbacks (m):
+### Frankfurt Redbacks (m)
 **By opponent:** KK 5 (a), 10 (h) | HD 4 (n), 9 (a) | BC 5 (n) | RL 4 (a), 7 (h) | HK 3 (n) | ZG 3 (a) | MK 2 (h) | DW 1 (a), 2 (h); byes: 6, 8  
 **By round:** 1: DW (a) | 2: MK (h), DW (h) | 3: HK (n), ZG (a) | 4: HD (n), RL (a) | 5: KK (a), BC (n) | 6: bye | 7: RL (h) | 8: bye | 9: HD (a) | 10: KK (h)  
 **Season summary:** 3 home match days (2, 7, 10), 5 away match days (1, 3, 4, 5, 9), travel: 39h  
 
-### Heidelberg Knights (m):
+### Heidelberg Knights (m)
 **By opponent:** KK 4 (n), 7 (a) | HD 1 (h), 2 (n) | BC 2 (a) | RL 5 (h), 10 (a) | FR 3 (n) | ZG 3 (a), 8 (h) | MK 5 (h) | DW 4 (a); byes: 6, 9  
 **By round:** 1: HD (h) | 2: HD (n), BC (a) | 3: FR (n), ZG (a) | 4: KK (n), DW (a) | 5: RL (h), MK (h) | 6: bye | 7: KK (a) | 8: ZG (h) | 9: bye | 10: RL (a)  
 **Season summary:** 3 home match days (1, 5, 8), 5 away match days (3, 2, 4, 7, 10), travel: 42h  
 
-### Zuffenhausen Giants (m):
+### Zuffenhausen Giants (m)
 **By opponent:** KK 1 (a), 2 (n) | HD 5 (a) | BC 4 (n) | RL 2 (a) | FR 3 (h) | HK 3 (h), 8 (a) | MK 4 (a), 6 (h) | DW 5 (n), 10 (h); byes: 7, 9  
 **By round:** 1: KK (a) | 2: KK (n), RL (a) | 3: FR (h), HK (h) | 4: BC (n), MK (a) | 5: HD (a), DW (n) | 6: MK (h) | 7: bye | 8: HK (a) | 9: bye | 10: DW (h)  
 **Season summary:** 3 home match days (3, 6, 10), 5 away match days (1, 2, 4, 5, 8), travel: 43h  
 
-### Munich Kangaroos (m):
+### Munich Kangaroos (m)
 **By opponent:** KK 3 (n) | HD 3 (a), 8 (h) | BC 4 (h), 7 (a) | RL 5 (n), 9 (h) | FR 2 (a) | HK 5 (a) | ZG 4 (h), 6 (a) | DW 2 (n); byes: 1, 10  
 **By round:** 1: bye | 2: FR (a), DW (n) | 3: KK (n), HD (a) | 4: BC (h), ZG (h) | 5: RL (n), HK (a) | 6: ZG (a) | 7: BC (a) | 8: HD (h) | 9: RL (h) | 10: bye  
 **Season summary:** 3 home match days (4, 8, 9), 5 away match days (3, 2, 5, 6, 7), travel: 43h  
 
-### Dresden Wolves (m):
+### Dresden Wolves (m)
 **By opponent:** KK 4 (h) | HD 5 (a) | BC 3 (a), 8 (h) | RL 3 (n), 6 (a) | FR 1 (h), 2 (a) | HK 4 (h) | ZG 5 (n), 10 (a) | MK 2 (n); byes: 7, 9  
 **By round:** 1: FR (h) | 2: FR (a), MK (n) | 3: BC (a), RL (n) | 4: KK (h), HK (h) | 5: HD (a), ZG (n) | 6: RL (a) | 7: bye | 8: BC (h) | 9: bye | 10: ZG (a)  
 **Season summary:** 3 home match days (1, 4, 8), 5 away match days (3, 2, 5, 6, 10), travel: 44h  
 
-### Hamburg Dockers (w):
+### Hamburg Dockers (w)
 **By opponent:** BC 5 (h), 7 (a) | RL 2 (a), 9 (h) | HK 1 (a), 6 (h) | RK 3 (h), 10 (a @ FR); byes: 4, 8  
 **By round:** 1: HK (a) | 2: RL (a) | 3: RK (h) | 4: bye | 5: BC (h) | 6: HK (h) | 7: BC (a) | 8: bye | 9: RL (h) | 10: RK (a @ FR)  
 **Season summary:** 4 home match days (3, 5, 6, 9), 4 away match days (1, 2, 7, 10), travel: 35h  
 
-### Berlin Crocodiles (w):
+### Berlin Crocodiles (w)
 **By opponent:** HD 5 (a), 7 (h) | RL 3 (h), 4 (a) | HK 2 (h), 8 (a) | RK 1 (a @ KK), 9 (h); byes: 6, 10  
 **By round:** 1: RK (a @ KK) | 2: HK (h) | 3: RL (h) | 4: RL (a) | 5: HD (a) | 6: bye | 7: HD (h) | 8: HK (a) | 9: RK (h) | 10: bye  
 **Season summary:** 4 home match days (3, 2, 7, 9), 4 away match days (1, 4, 5, 8), travel: 35h  
 
-### Rheinland Lions (w):
+### Rheinland Lions (w)
 **By opponent:** HD 2 (h), 9 (a) | BC 3 (a), 4 (h) | HK 5 (a), 10 (h) | RK 6 (h), 8 (a @ MK); byes: 1, 7  
 **By round:** 1: bye | 2: HD (h) | 3: BC (a) | 4: BC (h) | 5: HK (a) | 6: RK (h) | 7: bye | 8: RK (a @ MK) | 9: HD (a) | 10: HK (h)  
 **Season summary:** 4 home match days (2, 4, 6, 10), 4 away match days (3, 5, 8, 9), travel: 36h  
 
-### Heidelberg Knights (w):
+### Heidelberg Knights (w)
 **By opponent:** HD 1 (h), 6 (a) | BC 2 (a), 8 (h) | RL 5 (h), 10 (a) | RK 4 (a @ MK), 7 (h); byes: 3, 9  
 **By round:** 1: HD (h) | 2: BC (a) | 3: bye | 4: RK (a @ MK) | 5: RL (h) | 6: HD (a) | 7: RK (h) | 8: BC (h) | 9: bye | 10: RL (a)  
 **Season summary:** 4 home match days (1, 5, 7, 8), 5 away match days (2, 4, 6, 10), travel: 34h  
 
-### Red Koalaroos (w):
+### Red Koalaroos (w)
 **By opponent:** HD 3 (a), 10 (h @ FR) | BC 1 (h @ KK), 9 (a) | RL 6 (a), 8 (h @ MK) | HK 4 (h @ MK), 7 (a); byes: 2, 5  
 **By round:** 1: BC (h @ KK) | 2: bye | 3: HD (a) | 4: HK (h @ MK) | 5: bye | 6: RL (a) | 7: HK (a) | 8: RL (h @ MK) | 9: BC (a) | 10: HD (h @ FR)  
 **Season summary:** 4 home match days (1, 4, 8, 10), 2 away match days (3, 6, 7, 9), travel: 64h  
