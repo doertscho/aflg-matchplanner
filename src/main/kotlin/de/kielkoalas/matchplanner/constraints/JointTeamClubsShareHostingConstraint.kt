@@ -18,7 +18,7 @@ class JointTeamClubsShareHostingConstraint(private val problem: Problem) : Const
                 val hostVars = problem.getAllGroups("w").map { (matchDay, groupNo) ->
                     JointTeamHost.get(solver, matchDay, groupNo, team, hostClub)
                 }
-                solver.buildSumConstraint(1.0, 1.0, key, hostVars)
+                solver.buildSumConstraint(1.0, 2.0, key, hostVars)
             }
             for (hostClub in team.clubs.filter { it.abbreviation == "MK" }) {
                 val key = "jointTeam-${team.abbreviation}-plays-two-matches-at-${hostClub.abbreviation}"

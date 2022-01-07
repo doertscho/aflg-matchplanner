@@ -15,12 +15,12 @@ class EachClubHostedAtMostOnceConstraint(private val problem: Problem) : Constra
             val duels = problem.getDuels(competition)
             val flippedDuels = duels.map { (team1, team2) -> Pair(team2, team1) }
             for ((host, guest) in (duels + flippedDuels)) {
-                if (host.clubs.size > 1) continue
-                val hostClub = host.clubs.first()
                 val key = "hostedOnce-${guest.abbreviation}-$competition-@-${host.abbreviation}"
                 val locationVariables = problem.getAllGroups(competition)
-                    .map { (matchDay, groupNo) ->
-                        Location.get(solver, matchDay, groupNo, hostClub, guest)
+                    .flatMap { (matchDay, groupNo) ->
+                        host.clubs.map { hostClub ->
+                            Location.get(solver, matchDay, groupNo, hostClub, guest)
+                        }
                     }
                 solver.buildAtMostOneConstraint(key, locationVariables)
             }

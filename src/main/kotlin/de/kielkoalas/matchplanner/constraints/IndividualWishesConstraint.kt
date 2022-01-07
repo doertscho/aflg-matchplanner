@@ -15,15 +15,16 @@ class IndividualWishesConstraint(private val problem: Problem) : ConstraintSet {
     override fun createInSolver(solver: MPSolver) {
 
         // give a bye for the champions league participants on the first match day
-        val berlin = problem.teams.find { it.abbreviation == "BC" && it.competition == "m" } ?: error("")
-        val lionesses = problem.teams.find { it.abbreviation == "RL" && it.competition == "w" } ?: error("")
+        val clTeams = problem.teams.filter {
+            (it.abbreviation == "BC" && it.competition == "m")
+                    || (it.abbreviation == "RL" && it.competition == "w")
+        }
         val first = problem.matchDays.find { it.number == 1 } ?: error("")
-        val clGroupVars =
-            (first.getGroupNumbers(berlin.competition)).map { groupNo ->
-                GroupAssignment.get(solver, berlin.competition, first, groupNo, berlin)
-            } + (first.getGroupNumbers(lionesses.competition)).map { groupNo ->
-                GroupAssignment.get(solver, lionesses.competition, first, groupNo, lionesses)
+        val clGroupVars = clTeams.flatMap { team ->
+            first.getGroupNumbers(team.competition).map { groupNo ->
+                GroupAssignment.get(solver, team.competition, first, groupNo, team)
             }
+        }
         solver.buildSumConstraint(0.0, 0.0, "cl-byes", clGroupVars)
 
         // stuttgart and munich want an away match in hamburg
@@ -48,5 +49,14 @@ class IndividualWishesConstraint(private val problem: Problem) : ConstraintSet {
                 GroupAssignment.get(solver, kiel.competition, six, groupNo, kiel)
             }
         solver.buildSumConstraint(0.0, 0.0, "kiel-bye", groupVars)
+
+        // dresden would like to have a bye in round 9
+        val dresden = problem.teams.find { it.abbreviation == "DW" } ?: error("")
+        val nine = problem.matchDays.find { it.number == 9 } ?: error("")
+        val ddGroupVars =
+            (nine.getGroupNumbers(dresden.competition)).map { groupNo ->
+                GroupAssignment.get(solver, dresden.competition, nine, groupNo, dresden)
+            }
+        solver.buildSumConstraint(0.0, 0.0, "dd-bye", ddGroupVars)
     }
 }

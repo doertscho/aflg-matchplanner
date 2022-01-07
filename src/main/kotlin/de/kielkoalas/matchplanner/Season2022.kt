@@ -64,7 +64,7 @@ val distances = mapOf(
 
 
 val matchDays = listOf(
-    MatchDay(1, mapOf("m" to MatchDataSpec(2), "w" to MatchDataSpec(2))),
+    MatchDay(1, mapOf("m" to MatchDataSpec(2, numberOfGroups = 3), "w" to MatchDataSpec(2, numberOfGroups = 3))),
     MatchDay(2, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(2))),
     MatchDay(3, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(2))),
     MatchDay(4, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(2))),
@@ -72,7 +72,7 @@ val matchDays = listOf(
     MatchDay(6, mapOf("m" to MatchDataSpec(2), "w" to MatchDataSpec(2))),
     MatchDay(7, mapOf("m" to MatchDataSpec(2), "w" to MatchDataSpec(2))),
     MatchDay(8, mapOf("m" to MatchDataSpec(2), "w" to MatchDataSpec(2))),
-    MatchDay(9, mapOf("m" to MatchDataSpec(2), "w" to MatchDataSpec(2))),
+    MatchDay(9, mapOf("m" to MatchDataSpec(2, numberOfGroups = 3), "w" to MatchDataSpec(2, numberOfGroups = 3))),
     MatchDay(10, mapOf("m" to MatchDataSpec(2), "w" to MatchDataSpec(2))),
 )
 

@@ -8,7 +8,9 @@ data class Solution(
 ) {
     override fun toString() =
         "match days:\n" + matchDaysToString() + "\n" +
-        "by club:\n" + allTeamMatchesToString()
+        "by club:\n" + allTeamMatchesToString() + "\n\n" +
+        "total travel: ${totalTravelTimeHours()}h\n" +
+        "${travelSummary()}\n"
 }
 
 fun Solution.findMatchDaysAndGroupsForDuel(team1: Team, team2: Team): List<Pair<MatchDay, Group>> {
@@ -49,9 +51,6 @@ fun Solution.matchDaysToString(): String {
                 "**************"
     }
     return matchDays.joinToString("\n\n")
-        // TODO: dynamicalise
-        .replace("Zuffenhausen Giants (w)", "Southern Tigeroos (w)")
-        .replace("Frankfurt Redbacks (w)", "Frankfurt Redcats (w)")
 }
 
 fun getHomeAway(group: Group, team: Team, other: Team) =
@@ -61,13 +60,33 @@ fun getHomeAway(group: Group, team: Team, other: Team) =
         else -> "n"
     }
 
-fun Solution.summaryForTeam(team: Team): String {
+fun Solution.travelTimeMinutes(team: Team): Int {
     val others = problem.getOthers(team)
-
     val distances = matchDayAssignments.values.flatten()
         .filter { mda -> mda.teams.contains(team) && others.any { mda.teams.contains(it) } }
         .map { team.clubs.map { club -> problem.getDistance(club, it.host) } }
-    val travelTime = distances.sumBy { ds -> ds.map { d -> d.minutesByCar }.average().toInt() * 2 } / 60
+    return distances.sumBy { ds -> ds.map { d -> d.minutesByCar }.average().toInt() * 2 }
+}
+
+fun Solution.totalTravelTimeHours(): Int {
+    return problem.teams.sumBy { travelTimeMinutes(it) } / 60
+}
+
+fun Solution.travelSummary(): String {
+    return problem.competitions.joinToString("\n") { competition ->
+        val teams = problem.teams.filter { it.competition == competition }
+        val distances = teams
+            .map { team -> Pair(team, travelTimeMinutes(team)) }
+            .sortedBy { it.second }
+            .joinToString(" | ") { (team, distance) ->
+                "${team.abbreviation} (${distance / 60}h)"
+            }
+        "$competition: $distances"
+    }
+}
+
+fun Solution.summaryForTeam(team: Team): String {
+    val travelTime = travelTimeMinutes(team) / 60
     val mda = matchDayAssignments.entries
         .filter { it.value.any { group -> group.teams.contains(team) } }
         .mapNotNull { (matchDay, groups) ->
