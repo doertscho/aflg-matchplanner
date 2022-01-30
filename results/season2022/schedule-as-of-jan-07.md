@@ -1,6 +1,7 @@
 # AFL Germany 2022
 
-Schedule as agreed by the board and the club presidents on Fri 7th Jan 2022.
+Schedule as agreed by the board and the club presidents on Fri 7th Jan 2022.  
+**Now including two amendments that were agreed later.**
 
 Find summaries by club at the end of this file.
 
@@ -21,9 +22,8 @@ Heidelberg Knights (w) - Hamburg Dockers (w)
 
 **Host: Kiel Koalas**  
 Kiel Koalas (m) - Zuffenhausen Giants (m)  
-Red Koalaroos (w) - Berlin Crocodiles (w)  
 
-**Byes:** Berlin Crocodiles (m), Rheinland Lions (m), Munich Kangaroos (m), Rheinland Lions (w)  
+**Byes:** Berlin Crocodiles (m), Berlin Crocodiles (w), Rheinland Lions (m), Rheinland Lions (w), Munich Kangaroos (m), Red Koalaroos (w)  
 
 
 ### Match day  2 (2022-04-23)  
@@ -32,7 +32,7 @@ Red Koalaroos (w) - Berlin Crocodiles (w)
 Rheinland Lions (m) - Kiel Koalas (m)  
 Kiel Koalas (m) - Zuffenhausen Giants (m)  
 Rheinland Lions (m) - Zuffenhausen Giants (m)  
-Rheinland Lions (w) - Hamburg Dockers (w)  
+Rheinland Lions (w) - Red Koalaroos (w)  
 
 **Host: Frankfurt Redbacks**  
 Frankfurt Redbacks (m) - Munich Kangaroos (m)  
@@ -45,7 +45,7 @@ Hamburg Dockers (m) - Heidelberg Knights (m)
 Berlin Crocodiles (m) - Heidelberg Knights (m)  
 Berlin Crocodiles (w) - Heidelberg Knights (w)  
 
-**Byes:** Red Koalaroos (w)  
+**Byes:** Hamburg Dockers (w)  
 
 
 ### Match day  3 (2022-05-07)  
@@ -87,9 +87,9 @@ Dresden Wolves (m) - Heidelberg Knights (m)
 Rheinland Lions (m) - Hamburg Dockers (m)  
 Hamburg Dockers (m) - Frankfurt Redbacks (m)  
 Rheinland Lions (m) - Frankfurt Redbacks (m)  
-Rheinland Lions (w) - Berlin Crocodiles (w)  
+Rheinland Lions (w) - Hamburg Dockers (w)   
 
-**Byes:** Hamburg Dockers (w)  
+**Byes:** Berlin Crocodiles (w)
 
 
 ### Match day  5 (2022-06-04)  
@@ -120,7 +120,6 @@ if the Euro Cup in Stirling is played on this weekend.*
 
 **Host: Rheinland Lions**  
 Rheinland Lions (m) - Dresden Wolves (m)  
-Rheinland Lions (w) - Red Koalaroos (w)  
 
 **Host: Hamburg Dockers**  
 Hamburg Dockers (m) - Berlin Crocodiles (m)  
@@ -129,7 +128,11 @@ Hamburg Dockers (w) - Heidelberg Knights (w)
 **Host: Zuffenhausen Giants**  
 Zuffenhausen Giants (m) - Munich Kangaroos (m)  
 
-**Byes:** Kiel Koalas (m), Frankfurt Redbacks (m), Heidelberg Knights (m), Berlin Crocodiles (w)  
+**Host: Kiel Koalas**  
+Red Koalaroos (w) - Berlin Crocodiles (w)  
+... plus maybe a little tournament!  
+
+**Byes:** Kiel Koalas (m), Frankfurt Redbacks (m), Heidelberg Knights (m), Rheinland Lions (w)  
 
 
 ### Match day  7 (2022-07-02)  
@@ -154,7 +157,6 @@ Berlin Crocodiles (w) - Hamburg Dockers (w)
 
 **Host: Heidelberg Knights**  
 Heidelberg Knights (m) - Zuffenhausen Giants (m)  
-Heidelberg Knights (w) - Berlin Crocodiles (w)  
 
 **Host: Dresden Wolves**  
 Dresden Wolves (m) - Berlin Crocodiles (m)  
@@ -194,8 +196,10 @@ Red Koalaroos (w) - Hamburg Dockers (w)
 **Host: Rheinland Lions**  
 Rheinland Lions (m) - Heidelberg Knights (m)  
 Rheinland Lions (w) - Heidelberg Knights (w)  
+Heidelberg Knights (w) - Berlin Crocodiles (w)  
+Rheinland Lions (w) - Berlin Crocodiles (w)  
 
-**Byes:** Hamburg Dockers (m), Berlin Crocodiles (m), Munich Kangaroos (m), Berlin Crocodiles (w)  
+**Byes:** Hamburg Dockers (m), Berlin Crocodiles (m), Munich Kangaroos (m)  
 
 
 ## Summaries by club / team
@@ -246,29 +250,29 @@ Rheinland Lions (w) - Heidelberg Knights (w)
 **Season summary:** 3 home match days (1, 4, 8), 5 away match days (3, 2, 5, 6, 10), travel: 44h  
 
 ### Hamburg Dockers (w)
-**By opponent:** BC 5 (h), 7 (a) | RL 2 (a), 9 (h) | HK 1 (a), 6 (h) | RK 3 (h), 10 (a @ FR); byes: 4, 8  
-**By round:** 1: HK (a) | 2: RL (a) | 3: RK (h) | 4: bye | 5: BC (h) | 6: HK (h) | 7: BC (a) | 8: bye | 9: RL (h) | 10: RK (a @ FR)  
-**Season summary:** 4 home match days (3, 5, 6, 9), 4 away match days (1, 2, 7, 10), travel: 35h  
+**By opponent:** BC 5 (h), 7 (a) | RL 4 (a), 9 (h) | HK 1 (a), 6 (h) | RK 3 (h), 10 (a @ FR); byes: 2, 8  
+**By round:** 1: HK (a) | 2: bye | 3: RK (h) | 4: RL (a) | 5: BC (h) | 6: HK (h) | 7: BC (a) | 8: bye | 9: RL (h) | 10: RK (a @ FR)  
+**Season summary:** 4 home match days (3, 5, 6, 9), 4 away match days (1, 4, 7, 10), travel: 35h  
 
 ### Berlin Crocodiles (w)
-**By opponent:** HD 5 (a), 7 (h) | RL 3 (h), 4 (a) | HK 2 (h), 8 (a) | RK 1 (a @ KK), 9 (h); byes: 6, 10  
-**By round:** 1: RK (a @ KK) | 2: HK (h) | 3: RL (h) | 4: RL (a) | 5: HD (a) | 6: bye | 7: HD (h) | 8: HK (a) | 9: RK (h) | 10: bye  
-**Season summary:** 4 home match days (3, 2, 7, 9), 4 away match days (1, 4, 5, 8), travel: 35h  
+**By opponent:** HD 5 (a), 7 (h) | RL 3 (h), 10 (a) | HK 2 (h), 10 (n) | RK 6 (a @ KK), 9 (h); byes: 1, 4, 8  
+**By round:** 1: bye | 2: HK (h) | 3: RL (h) | 4: bye | 5: HD (a) | 6: RK (a @ KK) | 7: HD (h) | 8: bye | 9: RK (h) | 10: RL (a), HK (n)  
+**Season summary:** 4 home match days (2, 3, 7, 9), 3 away match days (5, 6, 10), travel: 35h  
 
 ### Rheinland Lions (w)
-**By opponent:** HD 2 (h), 9 (a) | BC 3 (a), 4 (h) | HK 5 (a), 10 (h) | RK 6 (h), 8 (a @ MK); byes: 1, 7  
-**By round:** 1: bye | 2: HD (h) | 3: BC (a) | 4: BC (h) | 5: HK (a) | 6: RK (h) | 7: bye | 8: RK (a @ MK) | 9: HD (a) | 10: HK (h)  
-**Season summary:** 4 home match days (2, 4, 6, 10), 4 away match days (3, 5, 8, 9), travel: 36h  
+**By opponent:** HD 2 (h), 9 (a) | BC 3 (a), 4 (h) | HK 5 (a), 10 (h) | RK 2 (h), 8 (a @ MK); byes: 1, 6, 7  
+**By round:** 1: bye | 2: RK (h) | 3: BC (a) | 4: HD (h) | 5: HK (a) | 6: bye | 7: bye | 8: RK (a @ MK) | 9: HD (a) | 10: HK (h), BC (h)  
+**Season summary:** 3 home match days (2, 4, 10), 4 away match days (3, 5, 8, 9), travel: 36h  
 
 ### Heidelberg Knights (w)
-**By opponent:** HD 1 (h), 6 (a) | BC 2 (a), 8 (h) | RL 5 (h), 10 (a) | RK 4 (a @ MK), 7 (h); byes: 3, 9  
-**By round:** 1: HD (h) | 2: BC (a) | 3: bye | 4: RK (a @ MK) | 5: RL (h) | 6: HD (a) | 7: RK (h) | 8: BC (h) | 9: bye | 10: RL (a)  
-**Season summary:** 4 home match days (1, 5, 7, 8), 5 away match days (2, 4, 6, 10), travel: 34h  
+**By opponent:** HD 1 (h), 6 (a) | BC 2 (a), 10 (n) | RL 5 (h), 10 (a) | RK 4 (a @ MK), 7 (h); byes: 3, 8, 9  
+**By round:** 1: HD (h) | 2: BC (a) | 3: bye | 4: RK (a @ MK) | 5: RL (h) | 6: HD (a) | 7: RK (h) | 8: bye | 9: bye | 10: RL (a), BC (n)  
+**Season summary:** 3 home match days (1, 5, 7), 4 away match days (2, 4, 6, 10), travel: 34h  
 
 ### Red Koalaroos (w)
-**By opponent:** HD 3 (a), 10 (h @ FR) | BC 1 (h @ KK), 9 (a) | RL 6 (a), 8 (h @ MK) | HK 4 (h @ MK), 7 (a); byes: 2, 5  
-**By round:** 1: BC (h @ KK) | 2: bye | 3: HD (a) | 4: HK (h @ MK) | 5: bye | 6: RL (a) | 7: HK (a) | 8: RL (h @ MK) | 9: BC (a) | 10: HD (h @ FR)  
-**Season summary:** 4 home match days (1, 4, 8, 10), 2 away match days (3, 6, 7, 9), travel: 64h  
+**By opponent:** HD 3 (a), 10 (h @ FR) | BC 6 (h @ KK), 9 (a) | RL 2 (a), 8 (h @ MK) | HK 4 (h @ MK), 7 (a); byes: 1, 5  
+**By round:** 1: bye | 2: RL (a) | 3: HD (a) | 4: HK (h @ MK) | 5: bye | 6: BC (h @ KK) | 7: HK (a) | 8: RL (h @ MK) | 9: BC (a) | 10: HD (h @ FR)  
+**Season summary:** 4 home match days (4, 6, 8, 10), 4 away match days (2, 3, 7, 9), travel: 64h  
 
 
 ## Additional notes
