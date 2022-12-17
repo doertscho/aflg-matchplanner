@@ -36,6 +36,10 @@ fun MPSolver.buildExactlyOneConstraint(key: String, variables: Iterable<MPVariab
     buildSumConstraint(1.0, 1.0, key, variables)
 }
 
+fun MPSolver.buildAtLeastOneConstraint(key: String, variables: Iterable<MPVariable>) {
+    buildSumConstraint(1.0, Double.POSITIVE_INFINITY, key, variables)
+}
+
 fun MPSolver.buildAtMostOneConstraint(key: String, variables: Iterable<MPVariable>) {
     buildSumConstraint(0.0, 1.0, key, variables)
 }

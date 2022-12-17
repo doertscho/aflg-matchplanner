@@ -15,11 +15,13 @@ repositories {
 }
 
 val orToolsVersion = "8.1.8487"
+//val orToolsVersion = "9.4.1874"
 
 dependencies {
     implementation("net.java.dev.jna", "jna-platform", "5.5.0")
-    implementation(files("lib/ortools-java-${orToolsVersion}.jar"))
-    implementation(files("lib/ortools-darwin-${orToolsVersion}.jar"))
+//    implementation(files("lib/ortools-java-${orToolsVersion}.jar"))
+//    implementation(files("lib/ortools-win32-x86-64-${orToolsVersion}.jar"))
+    implementation("com.google.ortools", "ortools-java", "8.2.9025")
     implementation("com.google.protobuf", "protobuf-java", "3.13.0")
     testImplementation(kotlin("test-junit"))
     implementation(kotlin("stdlib-jdk8"))

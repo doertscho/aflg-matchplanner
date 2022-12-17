@@ -26,7 +26,7 @@ fun Solution.findMatchDaysAndGroupsForDuel(team1: Team, team2: Team): List<Pair<
 
 fun Solution.matchDaysToString(): String {
     val matchDays = matchDayAssignments.map { (matchDay, groups) ->
-        val date = problem.startDate.plusWeeks(2L * (matchDay.number - 1))
+        val date = problem.dates[matchDay.number - 1]
         val groupsFormatted = groups.mapNotNull { group ->
             if (group.teams.size > 1) {
                 val pairs = group.teams.flatMap { team1 ->

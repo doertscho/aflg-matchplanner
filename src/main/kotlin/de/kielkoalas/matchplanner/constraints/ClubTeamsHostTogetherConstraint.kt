@@ -11,6 +11,10 @@ class ClubTeamsHostTogetherConstraint(private val problem: Problem) : Constraint
 
     override fun createInSolver(solver: MPSolver) {
         for ((matchDay, groupNo) in problem.getAllGroups("w")) {
+
+//            val mSpec = matchDay.specByCompetition["m"]
+//            if (mSpec?.groupSize == 2) continue
+
             for (team in problem.teams.filter { it.competition == "w" && it.clubs.size == 1 }) {
                 val key = "hostTogether-${matchDay.number}-$groupNo-${team.abbreviation}"
                 val wHostVariable = Host.get(solver, matchDay, groupNo, team)

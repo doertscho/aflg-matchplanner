@@ -15,6 +15,7 @@ object ConstraintResolver {
         Dictionary.HOST_IN_GROUP.name to { p -> HostInGroupConstraint(p) },
         Dictionary.HOST_TO_HAVE_GUESTS.name to { p -> HostToHaveGuestsConstraint(p) },
         Dictionary.ONE_MATCH_PER_ROUND_AGAINST_EACH.name to { p -> OneMatchPerRoundAgainstEachClubConstraint(p) },
+        Dictionary.ONE_MATCH_AGAINST_EACH.name to { p -> OneMatchAgainstEachClubConstraint(p) },
         Dictionary.ONE_SHORT_MATCH_AGAINST_EACH.name to { p -> OneShortMatchAgainstEachClubConstraint(p) },
         Dictionary.TWO_MATCHES_AGAINST_EACH.name to { p -> TwoMatchesAgainstEachClubConstraint(p) },
         Dictionary.NO_BACK_TO_BACK_MATCHES.name to { p -> NoBackToBackMatchesAgainstTeamsConstraint(p) },
@@ -32,6 +33,7 @@ object ConstraintResolver {
         Dictionary.INDIVIDUAL_WISHES.name to { p -> IndividualWishesConstraint(p) },
         Dictionary.JOINT_TEAM_CLUBS_SHARE_HOSTING.name to { p -> JointTeamClubsShareHostingConstraint(p) },
         Dictionary.JOINT_TEAM_HOST_LINK.name to { p -> JointTeamHostLinkConstraint(p) },
+        Dictionary.BYES_ON_A_MATCH_DAY.name to { p -> ByesOnAMatchDayConstraint(p) },
     )
 
     fun resolve(key: String, problem: Problem): ConstraintSet? {

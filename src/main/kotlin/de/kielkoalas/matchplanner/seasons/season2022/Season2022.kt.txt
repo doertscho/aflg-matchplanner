@@ -1,4 +1,4 @@
-package de.kielkoalas.matchplanner
+package de.kielkoalas.matchplanner.seasons.season2022
 
 import de.kielkoalas.matchplanner.models.*
 import de.kielkoalas.matchplanner.variables.*

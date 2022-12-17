@@ -14,14 +14,14 @@ class DistanceConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
         for (competition in problem.competitions) {
-            val ub = 60.0 * if (competition == "m") 45.0 else 28.0 // ignoring distances to rk
+            val ub = 60.0 * if (competition == "m") 40.0 else 40.0 // ignoring distances to rk
             for (guest in problem.teams.filter { it.competition == competition }) {
                 if (guest.clubs.size > 1) continue
                 val guestClub = guest.clubs.first()
                 val key = "maxDistance-${guest.abbreviation}-${guest.competition}"
                 val constraint = solver.makeConstraint(0.0, ub, key)
                 for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
-                    for (host in problem.teams.filter { it.competition == competition && it.clubs.size == 1 }.flatMap { it.clubs }) {
+                    for (host in problem.teams.filter { it.competition == competition }.flatMap { it.clubs }) {
                         if (host != guestClub) {
                             val distance = 2.0 * problem.getDistance(guestClub, host).minutesByCar
                             val locationVariable = Location.get(solver, matchDay, groupNo, host, guest)

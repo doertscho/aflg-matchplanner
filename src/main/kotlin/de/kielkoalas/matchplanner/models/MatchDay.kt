@@ -9,6 +9,7 @@ data class MatchDataSpec(
     val groupSize: Int,
     val numberOfGroups: Int = 3,
     val round: Int = 1,
+    val byes: Int = 0
 )
 
 fun MatchDay.hasByes(problem: Problem, competition: String) =

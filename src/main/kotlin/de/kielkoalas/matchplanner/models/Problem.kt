@@ -11,7 +11,7 @@ data class Problem(
     val teams: Set<Team> = setOf(),
     val competitions: Set<String> = teams.map { it.competition }.distinct().toSet(),
 
-    val startDate: LocalDate,
+    val dates: List<LocalDate>,
 
     val variables: Set<VariableSet<*>>,
     val constraints: Set<String>,
