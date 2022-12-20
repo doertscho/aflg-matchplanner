@@ -92,7 +92,6 @@ fun main() {
 
     val problem = Problem(
         dates = listOf(
-            LocalDate.parse("2023-03-18"),
             LocalDate.parse("2023-04-15"),
             LocalDate.parse("2023-05-06"),
             LocalDate.parse("2023-05-20"),
@@ -112,7 +111,7 @@ fun main() {
             Host,
             Duel,
             Location,
-//            JointTeamHost,
+            JointTeamHost,
         ),
         constraints = setOf(
             Dictionary.GROUP_SIZE.name,
@@ -128,7 +127,7 @@ fun main() {
             Dictionary.DUEL_IN_GROUP.name,
             Dictionary.HOME_AWAY_MATCHES.name,
             Dictionary.LOCATION_HOST_LINK.name,
-//            Dictionary.EACH_CLUB_HOSTED_AT_MOST_ONCE.name,
+            Dictionary.EACH_CLUB_HOSTED_AT_MOST_ONCE.name,
             Dictionary.MAX_DISTANCE.name,
             Dictionary.FULL_MATCHES_IN_POOL.name,
 //            Dictionary.FULL_MATCHES_OUTSIDE_POOL.name,
@@ -137,9 +136,10 @@ fun main() {
 //            Dictionary.CLUB_TEAMS_PLAY_TOGETHER.name,
             Dictionary.CLUB_TEAMS_HOST_TOGETHER.name,
             Dictionary.INDIVIDUAL_WISHES.name,
-//            Dictionary.JOINT_TEAM_CLUBS_SHARE_HOSTING.name,
-//            Dictionary.JOINT_TEAM_HOST_LINK.name,
+            Dictionary.JOINT_TEAM_CLUBS_SHARE_HOSTING.name,
+            Dictionary.JOINT_TEAM_HOST_LINK.name,
             Dictionary.BYES_ON_A_MATCH_DAY.name,
+            Dictionary.NO_BACK_TO_BACK_HOME_MATCHES.name,
         )
     )
 

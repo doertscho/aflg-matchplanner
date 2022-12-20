@@ -24,6 +24,37 @@ class IndividualWishesConstraint(private val problem: Problem) : ConstraintSet {
             }
         solver.buildSumConstraint(0.0, 0.0, "stuttgart-away-round-1", hostVars)
 
+        // avoid clashes with GFL for Kiel and Heidelberg
+        val kk = problem.teams.find { it.abbreviation == "KK" } ?: error("")
+        val hurricanesHomeMatchDay = problem.matchDays.find { it.number == 4 } ?: error("")
+        val kielHostVars =
+            (hurricanesHomeMatchDay.getGroupNumbers(kk.competition)).map { groupNo ->
+                Host.get(solver, hurricanesHomeMatchDay, groupNo, kk)
+            }
+        solver.buildSumConstraint(0.0, 0.0, "kiel-away-round-4", kielHostVars)
+
+        // bye for Kiel on Kieler Woche match day
+        val five = problem.matchDays.find { it.number == 5 } ?: error("")
+        val kiwoMatchVars =
+            (five.getGroupNumbers(kk.competition)).map { groupNo ->
+                GroupAssignment.get(solver, kk.competition, five, groupNo, kk)
+            }
+        solver.buildSumConstraint(0.0, 0.0, "kiel-bye-round-5", kiwoMatchVars)
+
+        // Dresden to host on match day 5, but not on 6
+        val dw = problem.teams.find { it.abbreviation == "DW" } ?: error("")
+        val dresdenFiveHostVars =
+            (five.getGroupNumbers(dw.competition)).map { groupNo ->
+                Host.get(solver, five, groupNo, dw)
+            }
+        solver.buildSumConstraint(1.0, 1.0, "dresden-host-round-5", dresdenFiveHostVars)
+        val six = problem.matchDays.find { it.number == 6 } ?: error("")
+        val dresdenSixHostVars =
+            (six.getGroupNumbers(dw.competition)).map { groupNo ->
+                Host.get(solver, six, groupNo, dw)
+            }
+        solver.buildSumConstraint(0.0, 0.0, "dresden-away-round-6", dresdenSixHostVars)
+
         // give a bye for the champions league participants on the first match day
 //        val clTeams = problem.teams.filter {
 //            (it.abbreviation == "BC" && it.competition == "m")

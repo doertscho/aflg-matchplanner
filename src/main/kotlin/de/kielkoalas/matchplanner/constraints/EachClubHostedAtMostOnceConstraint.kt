@@ -2,7 +2,7 @@ package de.kielkoalas.matchplanner.constraints
 
 import com.google.ortools.linearsolver.MPSolver
 import de.kielkoalas.matchplanner.ConstraintSet
-import de.kielkoalas.matchplanner.buildAtMostOneConstraint
+import de.kielkoalas.matchplanner.buildSumConstraint
 import de.kielkoalas.matchplanner.models.Problem
 import de.kielkoalas.matchplanner.models.getAllGroups
 import de.kielkoalas.matchplanner.models.getDuels
@@ -12,6 +12,7 @@ class EachClubHostedAtMostOnceConstraint(private val problem: Problem) : Constra
 
     override fun createInSolver(solver: MPSolver) {
         for (competition in problem.competitions) {
+            val ub = if (competition == "m") 1.0 else 2.0
             val duels = problem.getDuels(competition)
             val flippedDuels = duels.map { (team1, team2) -> Pair(team2, team1) }
             for ((host, guest) in (duels + flippedDuels)) {
@@ -22,7 +23,7 @@ class EachClubHostedAtMostOnceConstraint(private val problem: Problem) : Constra
                             Location.get(solver, matchDay, groupNo, hostClub, guest)
                         }
                     }
-                solver.buildAtMostOneConstraint(key, locationVariables)
+                solver.buildSumConstraint(0.0, ub, key, locationVariables)
             }
         }
     }

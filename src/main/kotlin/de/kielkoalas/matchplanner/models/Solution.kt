@@ -36,19 +36,18 @@ fun Solution.matchDaysToString(): String {
                 }.distinct().map { it.toList() }
                 val matches = pairs.joinToString("\n") { (team1, team2) ->
                     val (o1, o2) = if (team2.clubs.contains(group.host)) Pair(team2, team1) else Pair(team1, team2)
-                    "${o1.name} (${o1.competition}) - ${o2.name} (${o2.competition})"
+                    "${o1.name} (${o1.competition}) - ${o2.name} (${o2.competition})  "
                 }
-                "Host: ${group.host.name}\n$matches"
+                "**Host: ${group.host.name}**  \n$matches"
             } else {
                 null
             }
         }.joinToString("\n\n")
         val byes = problem.teams.filterNot { team -> groups.any { it.teams.contains(team) } }
         val byesFormatted = byes.joinToString(", ") { "${it.name} (${it.competition})" }
-        "Match day ${matchDay.number} (${date.format(DateTimeFormatter.ISO_DATE)}):\n\n" +
+        "## Match day ${matchDay.number} (${date.format(DateTimeFormatter.ISO_DATE)})\n\n" +
                 "$groupsFormatted\n\n" +
-                "Byes: $byesFormatted\n\n" +
-                "**************"
+                "Byes: $byesFormatted  \n\n"
     }
     return matchDays.joinToString("\n\n")
 }
@@ -81,7 +80,7 @@ fun Solution.travelSummary(): String {
             .joinToString(" | ") { (team, distance) ->
                 "${team.abbreviation} (${distance / 60}h)"
             }
-        "$competition: $distances"
+        "$competition: $distances  "
     }
 }
 
@@ -95,15 +94,22 @@ fun Solution.summaryForTeam(team: Team): String {
                 null
             } else {
                 val isHome = team.clubs.contains(group.host)
-                Pair(matchDay, isHome)
+                Triple(matchDay, isHome, group.host)
             }
         }
-    val homeMatches = mda.filter { (_, isHome) -> isHome }.map { (matchDay, _) -> matchDay.number }
-    val awayMatches = mda.filterNot { (_, isHome) -> isHome }.map { (matchDay, _) -> matchDay.number }
-    return "summary: " +
-            "${homeMatches.size} home match days (${homeMatches.joinToString(", ")}), " +
-            "${awayMatches.size} away match days (${awayMatches.joinToString(", ")}), " +
-            "travel: ${travelTime}h"
+    val homeMatches = mda.filter { (_, isHome, _) -> isHome }.map { (matchDay, _, host) ->
+        val date = problem.dates[matchDay.number - 1]
+        val addon = if (team.clubs.size > 1) " @ ${host.abbreviation}" else ""
+        "#${matchDay.number}$addon (${date.format(DateTimeFormatter.ISO_DATE).substring(5)})"
+    }
+    val awayMatches = mda.filterNot { (_, isHome, _) -> isHome }.map { (matchDay, _, host) ->
+        val date = problem.dates[matchDay.number - 1]
+        "#${matchDay.number} @ ${host.abbreviation} (${date.format(DateTimeFormatter.ISO_DATE).substring(5)})"
+    }
+    return "summary:  \n" +
+            "${homeMatches.size} home match days: ${homeMatches.joinToString(", ")}  \n" +
+            "${awayMatches.size} away match days: ${awayMatches.joinToString(", ")}  \n" +
+            "travel: ${travelTime}h  "
 }
 
 fun Solution.allTeamMatchesToString(): String {
@@ -150,8 +156,8 @@ fun Solution.teamMatchesToString(team: Team): String {
     }.joinToString(", ")
 
     val summary = summaryForTeam(team)
-    return "${team.name} (${team.competition}):\n" +
-            "by team: $matchesByTeam; byes: $byes\n" +
-            "by round: $matchesByRound\n" +
+    return "${team.name} (${team.competition}):  \n" +
+            "by team: $matchesByTeam; byes: $byes  \n" +
+            "by round: $matchesByRound  \n" +
             summary
 }
