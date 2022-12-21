@@ -12,7 +12,6 @@ class EachClubHostedAtMostOnceConstraint(private val problem: Problem) : Constra
 
     override fun createInSolver(solver: MPSolver) {
         for (competition in problem.competitions) {
-            val ub = if (competition == "m") 1.0 else 2.0
             val duels = problem.getDuels(competition)
             val flippedDuels = duels.map { (team1, team2) -> Pair(team2, team1) }
             for ((host, guest) in (duels + flippedDuels)) {
@@ -23,7 +22,7 @@ class EachClubHostedAtMostOnceConstraint(private val problem: Problem) : Constra
                             Location.get(solver, matchDay, groupNo, hostClub, guest)
                         }
                     }
-                solver.buildSumConstraint(0.0, ub, key, locationVariables)
+                solver.buildSumConstraint(0.0, 1.0, key, locationVariables)
             }
         }
     }

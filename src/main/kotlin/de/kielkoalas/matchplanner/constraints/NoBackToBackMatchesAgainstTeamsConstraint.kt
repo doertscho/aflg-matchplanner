@@ -14,6 +14,7 @@ class NoBackToBackMatchesAgainstTeamsConstraint(private val problem: Problem) : 
 
     override fun createInSolver(solver: MPSolver) {
         for (competition in problem.competitions) {
+            if (competition == "w") continue
             val threshold = 2
             val matchDays = problem.matchDays.sortedBy { it.number }
             for ((team1, team2) in problem.getDuels(competition)) {

@@ -7,9 +7,9 @@ data class Solution(
     val matchDayAssignments: Map<MatchDay, Set<Group>>
 ) {
     override fun toString() =
-        "match days:\n" + matchDaysToString() + "\n" +
-        "by club:\n" + allTeamMatchesToString() + "\n\n" +
-        "total travel: ${totalTravelTimeHours()}h\n" +
+        "# AFL Germany Season X – Draft Y\n\n" + matchDaysToString() + "\n" +
+        "# Summaries by team\n\n" + allTeamMatchesToString() + "\n\n" +
+        "total travel: ${totalTravelTimeHours()}h  \n" +
         "${travelSummary()}\n"
 }
 
@@ -106,8 +106,7 @@ fun Solution.summaryForTeam(team: Team): String {
         val date = problem.dates[matchDay.number - 1]
         "#${matchDay.number} @ ${host.abbreviation} (${date.format(DateTimeFormatter.ISO_DATE).substring(5)})"
     }
-    return "summary:  \n" +
-            "${homeMatches.size} home match days: ${homeMatches.joinToString(", ")}  \n" +
+    return "${homeMatches.size} home match days: ${homeMatches.joinToString(", ")}  \n" +
             "${awayMatches.size} away match days: ${awayMatches.joinToString(", ")}  \n" +
             "travel: ${travelTime}h  "
 }
@@ -156,7 +155,7 @@ fun Solution.teamMatchesToString(team: Team): String {
     }.joinToString(", ")
 
     val summary = summaryForTeam(team)
-    return "${team.name} (${team.competition}):  \n" +
+    return "**${team.name} (${team.competition})**  \n" +
             "by team: $matchesByTeam; byes: $byes  \n" +
             "by round: $matchesByRound  \n" +
             summary

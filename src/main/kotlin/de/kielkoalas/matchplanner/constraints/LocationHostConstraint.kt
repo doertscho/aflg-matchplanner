@@ -33,20 +33,20 @@ class LocationHostConstraint(private val problem: Problem) : ConstraintSet {
                             constraint.setCoefficient(locationVariable, -2.0)
                         }
                     } else {
-//                        for (hostClub in host.clubs) {
-//                            val jointHostVariable = JointTeamHost.get(solver, matchDay, groupNo, host, hostClub)
-//                            for (guest in problem.teams.filter { it.competition == competition }) {
-//                                val key = "locationHost-${matchDay.number}-$groupNo-" +
-//                                        "${host.abbreviation}@${hostClub.abbreviation}" +
-//                                        "-hosting-${guest.abbreviation}-$competition"
-//                                val groupVariable = GroupAssignment.get(solver, competition, matchDay, groupNo, guest)
-//                                val locationVariable = Location.get(solver, matchDay, groupNo, hostClub, guest)
-//                                val constraint = solver.makeConstraint(0.0, 1.0, key)
-//                                constraint.setCoefficient(jointHostVariable, 1.0)
-//                                constraint.setCoefficient(groupVariable, 1.0)
-//                                constraint.setCoefficient(locationVariable, -2.0)
-//                            }
-//                        }
+                        for (hostClub in host.clubs) {
+                            val jointHostVariable = JointTeamHost.get(solver, matchDay, groupNo, host, hostClub)
+                            for (guest in problem.teams.filter { it.competition == competition }) {
+                                val key = "locationHost-${matchDay.number}-$groupNo-" +
+                                        "${host.abbreviation}@${hostClub.abbreviation}" +
+                                        "-hosting-${guest.abbreviation}-$competition"
+                                val groupVariable = GroupAssignment.get(solver, competition, matchDay, groupNo, guest)
+                                val locationVariable = Location.get(solver, matchDay, groupNo, hostClub, guest)
+                                val constraint = solver.makeConstraint(0.0, 1.0, key)
+                                constraint.setCoefficient(jointHostVariable, 1.0)
+                                constraint.setCoefficient(groupVariable, 1.0)
+                                constraint.setCoefficient(locationVariable, -2.0)
+                            }
+                        }
                     }
                 }
             }

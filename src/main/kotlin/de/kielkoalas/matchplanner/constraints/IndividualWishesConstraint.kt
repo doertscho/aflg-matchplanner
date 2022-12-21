@@ -15,6 +15,8 @@ class IndividualWishesConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
 
+        val fr = problem.teams.find { it.abbreviation == "FR" } ?: error("")
+
         // stuttgart not to host in round one
         val sg = problem.teams.find { it.abbreviation == "SG" } ?: error("")
         val one = problem.matchDays.find { it.number == 1 } ?: error("")
@@ -48,48 +50,21 @@ class IndividualWishesConstraint(private val problem: Problem) : ConstraintSet {
                 Host.get(solver, five, groupNo, dw)
             }
         solver.buildSumConstraint(1.0, 1.0, "dresden-host-round-5", dresdenFiveHostVars)
-        val six = problem.matchDays.find { it.number == 6 } ?: error("")
-        val dresdenSixHostVars =
-            (six.getGroupNumbers(dw.competition)).map { groupNo ->
-                Host.get(solver, six, groupNo, dw)
+        val seven = problem.matchDays.find { it.number == 7 } ?: error("")
+        val dresdenSixMatchVars =
+            (seven.getGroupNumbers(dw.competition)).map { groupNo ->
+                GroupAssignment.get(solver, dw.competition, seven, groupNo, dw)
             }
-        solver.buildSumConstraint(0.0, 0.0, "dresden-away-round-6", dresdenSixHostVars)
+        solver.buildSumConstraint(0.0, 0.0, "dresden-bye-round-7", dresdenSixMatchVars)
 
-        // give a bye for the champions league participants on the first match day
-//        val clTeams = problem.teams.filter {
-//            (it.abbreviation == "BC" && it.competition == "m")
-//                    || (it.abbreviation == "RL" && it.competition == "w")
-//        }
-//        val first = problem.matchDays.find { it.number == 1 } ?: error("")
-//        val clGroupVars = clTeams.flatMap { team ->
-//            first.getGroupNumbers(team.competition).map { groupNo ->
-//                GroupAssignment.get(solver, team.competition, first, groupNo, team)
-//            }
-//        }
-//        solver.buildSumConstraint(0.0, 0.0, "cl-byes", clGroupVars)
-//
-//        // stuttgart and munich want an away match in hamburg
-//        val hamburg = problem.clubs.find { it.abbreviation == "HD" } ?: error("")
-//        val stuttgart = problem.teams.find { it.abbreviation == "ZG" && it.competition == "m" } ?: error("")
-//        val munich = problem.teams.find { it.abbreviation == "MK" && it.competition == "m" } ?: error("")
-//
-//        val stuttgartInHamburgVars = problem.getAllGroups("m").map { (matchDay, groupNo) ->
-//            Location.get(solver, matchDay, groupNo, hamburg, stuttgart)
-//        }
-//        solver.buildExactlyOneConstraint("stuttgart-wants-to-play-in-hamburg", stuttgartInHamburgVars)
-//        val munichInHamburgVars = problem.getAllGroups("m").map { (matchDay, groupNo) ->
-//            Location.get(solver, matchDay, groupNo, hamburg, munich)
-//        }
-//        solver.buildExactlyOneConstraint("munich-wants-to-play-in-hamburg", munichInHamburgVars)
-//
-//        // dresden would like to have a bye in round 9
-//        val dresden = problem.teams.find { it.abbreviation == "DW" } ?: error("")
-//        val nine = problem.matchDays.find { it.number == 9 } ?: error("")
-//        val ddGroupVars =
-//            (nine.getGroupNumbers(dresden.competition)).map { groupNo ->
-//                GroupAssignment.get(solver, dresden.competition, nine, groupNo, dresden)
-//            }
-//        solver.buildSumConstraint(0.0, 0.0, "dd-bye", ddGroupVars)
-//
+        // orcas clubs to play together on one match day
+        val orcasDay = problem.matchDays.find { it.number == 1 } ?: error("")
+        val mk = problem.teams.find { it.abbreviation == "MK" } ?: error("")
+        val orcas = problem.teams.find { it.abbreviation == "FO" } ?: error("")
+        val orcasDayVars = listOf(kk, mk, fr, orcas).map { team ->
+            GroupAssignment.get(solver, team.competition, orcasDay, 1, team)
+        } + listOf(Host.get(solver, orcasDay, 1, fr))
+        val allSet = orcasDayVars.size.toDouble()
+        solver.buildSumConstraint(allSet, allSet, "orcas-day", orcasDayVars)
     }
 }

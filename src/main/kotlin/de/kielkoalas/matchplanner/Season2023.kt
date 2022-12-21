@@ -74,9 +74,9 @@ val matchDays = listOf(
     MatchDay(8, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(3, byes = 2))),
 )
 
-val poolA = Pool("Pool A", setOf(HD, BC, MK), "m")
-val poolB = Pool("Pool B", setOf(ZG, RL, DW), "m")
-val poolC = Pool("Pool C", setOf(KK, HK,FR ), "m")
+val poolA = Pool("Pool A", setOf(HD, BC, RL), "m")
+val poolB = Pool("Pool B", setOf(ZG, MK, FR), "m")
+val poolC = Pool("Pool C", setOf(KK, HK, DW), "m")
 
 val clubs = setOf(KK, HD, BC, RL, FR, HK, ZG, MK, DW)
 val mensTeams = clubs.map { club ->
@@ -140,6 +140,7 @@ fun main() {
             Dictionary.JOINT_TEAM_HOST_LINK.name,
             Dictionary.BYES_ON_A_MATCH_DAY.name,
             Dictionary.NO_BACK_TO_BACK_HOME_MATCHES.name,
+            Dictionary.NUMBER_OF_BYES.name,
         )
     )
 
@@ -147,6 +148,8 @@ fun main() {
 
     println(solution)
 
-    val fileName = "results/season2023/result-${System.currentTimeMillis()}.txt"
-    File(fileName).writeText(solution.toString())
+    if (solution != null) {
+        val fileName = "results/season2023/result-${System.currentTimeMillis()}.md"
+        File(fileName).writeText(solution.toString())
+    }
 }

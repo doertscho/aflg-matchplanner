@@ -14,7 +14,7 @@ class NoBackToBackHomeMatchesConstraint(private val problem: Problem) : Constrai
     override fun createInSolver(solver: MPSolver) {
         val threshold = 2
         val matchDays = problem.matchDays.sortedBy { it.number }
-        for (team in problem.teams) {
+        for (team in problem.teams.filter { it.clubs.size == 1 }) {
             for (matchDaySets in matchDays.windowed(threshold, 1)) {
                 val key = "no-back-to-back-home-match-${team.abbreviation}-${team.competition}-${matchDaySets.map { it.number }.joinToString("-")}"
                 val hostVars = matchDaySets.flatMap { matchDay ->

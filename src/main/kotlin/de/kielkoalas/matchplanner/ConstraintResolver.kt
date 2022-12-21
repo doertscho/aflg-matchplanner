@@ -35,6 +35,7 @@ object ConstraintResolver {
         Dictionary.JOINT_TEAM_HOST_LINK.name to { p -> JointTeamHostLinkConstraint(p) },
         Dictionary.BYES_ON_A_MATCH_DAY.name to { p -> ByesOnAMatchDayConstraint(p) },
         Dictionary.NO_BACK_TO_BACK_HOME_MATCHES.name to { p -> NoBackToBackHomeMatchesConstraint(p) },
+        Dictionary.NUMBER_OF_BYES.name to { p -> NumberOfByesConstraint(p) },
     )
 
     fun resolve(key: String, problem: Problem): ConstraintSet? {

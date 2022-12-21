@@ -30,4 +30,5 @@ enum class Dictionary {
     JOINT_TEAM_CLUBS_SHARE_HOSTING,
     JOINT_TEAM_HOST_LINK,
     BYES_ON_A_MATCH_DAY,
+    NUMBER_OF_BYES,
 }
