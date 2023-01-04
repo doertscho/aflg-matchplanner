@@ -15,13 +15,13 @@ class NumberOfByesConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
         for (team in problem.teams) {
-            if (team.competition == "w") {
-                val keyTriples = "assigned-${team.abbreviation}"
-                val assignmentVariables = problem.getAllGroups("m").map { (matchDay, groupNo) ->
-                    GroupAssignment.get(solver, team.competition, matchDay, groupNo, team)
-                }
-                solver.buildSumConstraint(6.0, 6.0, keyTriples, assignmentVariables)
+            val lb = if (team.competition == "m") 7.0 else 2.0
+            val ub = if (team.competition == "m") 7.0 else 8.0
+            val keyTriples = "assigned-${team.abbreviation}-${team.competition}"
+            val assignmentVariables = problem.getAllGroups(team.competition).map { (matchDay, groupNo) ->
+                GroupAssignment.get(solver, team.competition, matchDay, groupNo, team)
             }
+            solver.buildSumConstraint(lb, ub, keyTriples, assignmentVariables)
         }
     }
 }

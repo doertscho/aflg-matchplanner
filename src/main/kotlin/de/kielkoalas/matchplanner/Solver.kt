@@ -7,10 +7,7 @@ import de.kielkoalas.matchplanner.models.Group
 import de.kielkoalas.matchplanner.models.Problem
 import de.kielkoalas.matchplanner.models.Solution
 import de.kielkoalas.matchplanner.models.getGroupNumbers
-import de.kielkoalas.matchplanner.variables.Duel
-import de.kielkoalas.matchplanner.variables.GroupAssignment
-import de.kielkoalas.matchplanner.variables.Host
-import de.kielkoalas.matchplanner.variables.Location
+import de.kielkoalas.matchplanner.variables.*
 import java.util.*
 import kotlin.concurrent.scheduleAtFixedRate
 
@@ -96,7 +93,12 @@ class Solver {
                 val hosts = problem.teams.filter { team ->
                     isSet(Host.get(mpSolver, matchDay, groupNo, team))
                 }
-                val hostClub = hosts.first { it.clubs.size == 1 }.clubs.first()
+                val firstHost = hosts.first()
+                val hostClub = if (firstHost.clubs.size == 1) firstHost.clubs.first() else {
+                    firstHost.clubs.find { hostClub ->
+                        isSet(JointTeamHost.get(mpSolver, matchDay, groupNo, firstHost, hostClub))
+                    } ?: error("No host club defined for ${firstHost.abbreviation} on ${matchDay.number}")
+                }
                 val teams = problem.teams.filter { team ->
                     isSet(GroupAssignment.get(mpSolver, team.competition, matchDay, groupNo, team))
                 }

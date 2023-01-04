@@ -7,7 +7,7 @@ data class MatchDay(
 
 data class MatchDataSpec(
     val groupSize: Int,
-    val numberOfGroups: Int = 3,
+    val numberOfGroups: Int = 4,
     val round: Int = 1,
     val byes: Int = 0
 )

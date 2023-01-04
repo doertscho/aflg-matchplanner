@@ -15,7 +15,7 @@ class OneMatchAgainstEachClubConstraint(private val problem: Problem) : Constrai
     override fun createInSolver(solver: MPSolver) {
         for (competition in problem.competitions) {
             val lb = if (competition == "m") 1.0 else 2.0
-            val ub = if (competition == "m") 2.0 else 3.0
+            val ub = if (competition == "m") 2.0 else 2.0
             val rounds = problem.matchDays.mapNotNull { it.specByCompetition[competition]?.round }.distinct()
             for (round in rounds) {
                 for ((team1, team2) in problem.getDuels(competition)) {

@@ -85,26 +85,27 @@ fun Solution.travelSummary(): String {
 }
 
 fun Solution.summaryForTeam(team: Team): String {
+    val otherTeam = problem.teams.find { it != team && it.clubs.intersect(team.clubs).isNotEmpty() }
     val travelTime = travelTimeMinutes(team) / 60
     val mda = matchDayAssignments.entries
         .filter { it.value.any { group -> group.teams.contains(team) } }
         .mapNotNull { (matchDay, groups) ->
             val group = groups.find { group -> group.teams.contains(team) }
-            if (group == null) {
-                null
-            } else {
-                val isHome = team.clubs.contains(group.host)
-                Triple(matchDay, isHome, group.host)
+            group?.let {
+                val together = otherTeam?.let {
+                    group.teams.contains(otherTeam)
+                } ?: false
+                Triple(matchDay, group.host, together)
             }
         }
-    val homeMatches = mda.filter { (_, isHome, _) -> isHome }.map { (matchDay, _, host) ->
+    val homeMatches = mda.filter { (_, host, _) -> team.clubs.contains(host) }.map { (matchDay, host, together) ->
         val date = problem.dates[matchDay.number - 1]
         val addon = if (team.clubs.size > 1) " @ ${host.abbreviation}" else ""
-        "#${matchDay.number}$addon (${date.format(DateTimeFormatter.ISO_DATE).substring(5)})"
+        "#${matchDay.number}$addon (${date.format(DateTimeFormatter.ISO_DATE).substring(5)})${if (together) "++" else ""}"
     }
-    val awayMatches = mda.filterNot { (_, isHome, _) -> isHome }.map { (matchDay, _, host) ->
+    val awayMatches = mda.filterNot { (_, host, _) -> team.clubs.contains(host) }.map { (matchDay, host, together) ->
         val date = problem.dates[matchDay.number - 1]
-        "#${matchDay.number} @ ${host.abbreviation} (${date.format(DateTimeFormatter.ISO_DATE).substring(5)})"
+        "#${matchDay.number} @ ${host.abbreviation} (${date.format(DateTimeFormatter.ISO_DATE).substring(5)})${if (together) "++" else ""}"
     }
     return "${homeMatches.size} home match days: ${homeMatches.joinToString(", ")}  \n" +
             "${awayMatches.size} away match days: ${awayMatches.joinToString(", ")}  \n" +

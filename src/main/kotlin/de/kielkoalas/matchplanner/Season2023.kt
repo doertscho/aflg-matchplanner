@@ -64,42 +64,44 @@ val distances = mapOf(
 
 
 val matchDays = listOf(
-    MatchDay(1, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(3, byes = 2))),
-    MatchDay(2, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(3, byes = 2))),
-    MatchDay(3, mapOf("m" to MatchDataSpec(2, byes = 3), "w" to MatchDataSpec(3))),
-    MatchDay(4, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(3, byes = 2))),
-    MatchDay(5, mapOf("m" to MatchDataSpec(2, byes = 3), "w" to MatchDataSpec(3))),
-    MatchDay(6, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(3, byes = 2))),
-    MatchDay(7, mapOf("m" to MatchDataSpec(2, byes = 3), "w" to MatchDataSpec(3))),
-    MatchDay(8, mapOf("m" to MatchDataSpec(3), "w" to MatchDataSpec(3, byes = 2))),
+    MatchDay(1, mapOf("m" to MatchDataSpec(3, numberOfGroups = 2, byes = 2), "w" to MatchDataSpec(2, numberOfGroups = 2))),
+    MatchDay(2, mapOf("m" to MatchDataSpec(2, byes = 0), "w" to MatchDataSpec(2))),
+    MatchDay(3, mapOf("m" to MatchDataSpec(3, numberOfGroups = 2, byes = 2), "w" to MatchDataSpec(2, numberOfGroups = 2))),
+    MatchDay(4, mapOf("m" to MatchDataSpec(2, byes = 0), "w" to MatchDataSpec(2))),
+    MatchDay(5, mapOf("m" to MatchDataSpec(3, numberOfGroups = 2, byes = 2), "w" to MatchDataSpec(2, numberOfGroups = 2))),
+    MatchDay(6, mapOf("m" to MatchDataSpec(2, byes = 0), "w" to MatchDataSpec(2))),
+    MatchDay(7, mapOf("m" to MatchDataSpec(3, numberOfGroups = 2, byes = 2), "w" to MatchDataSpec(2, numberOfGroups = 2))),
+    MatchDay(8, mapOf("m" to MatchDataSpec(2, byes = 0), "w" to MatchDataSpec(2))),
 )
 
 val poolA = Pool("Pool A", setOf(HD, BC, RL), "m")
 val poolB = Pool("Pool B", setOf(ZG, MK, FR), "m")
 val poolC = Pool("Pool C", setOf(KK, HK, DW), "m")
 
-val clubs = setOf(KK, HD, BC, RL, FR, HK, ZG, MK, DW)
-val mensTeams = clubs.map { club ->
+val clubs = setOf(KK, HD, BC, RL, HK, ZG, MK, FR, DW)
+val redWolves = Team("RW", "Frankfurt/Dresden RedWolves", "m", setOf(FR, DW))
+val mensTeams = clubs.minus(setOf(FR, DW)).map { club ->
     Team(club.abbreviation, club.name, "m", setOf(club) )
-}.toSet()
+}.toSet() + setOf(redWolves)
 val womensTeams = setOf(HD, BC, RL, HK).map { club ->
     Team(club.abbreviation, club.name, "w", setOf(club) )
-} + setOf(
-    Team("FO", name = "Unstoppable Flying Orcas", competition = "w", clubs = setOf(KK, MK, FR))
-)
+}
+//+ setOf(
+//    Team("FO", name = "Unstoppable Flying Orcas", competition = "w", clubs = setOf(KK, MK, FR))
+//)
 
 fun main() {
 
     val problem = Problem(
         dates = listOf(
-            LocalDate.parse("2023-04-15"),
             LocalDate.parse("2023-05-06"),
             LocalDate.parse("2023-05-20"),
             LocalDate.parse("2023-06-03"),
             LocalDate.parse("2023-06-17"),
-            LocalDate.parse("2023-07-01"),
             LocalDate.parse("2023-07-15"),
             LocalDate.parse("2023-07-29"),
+            LocalDate.parse("2023-09-02"),
+            LocalDate.parse("2023-09-16"),
         ),
         clubs = clubs,
         teams = mensTeams + womensTeams,
@@ -112,6 +114,7 @@ fun main() {
             Duel,
             Location,
             JointTeamHost,
+            ClubTeamsPlayTogether,
         ),
         constraints = setOf(
             Dictionary.GROUP_SIZE.name,
@@ -120,25 +123,26 @@ fun main() {
             Dictionary.GROUP_TO_HAVE_HOST.name,
             Dictionary.HOST_IN_GROUP.name,
             Dictionary.HOST_TO_HAVE_GUESTS.name,
+            Dictionary.DUEL_IN_GROUP.name,
             Dictionary.ONE_MATCH_AGAINST_EACH.name,
 //            Dictionary.ONE_SHORT_MATCH_AGAINST_EACH.name,
 //            Dictionary.TWO_MATCHES_AGAINST_EACH.name,
-//            Dictionary.NO_BACK_TO_BACK_MATCHES.name,
-            Dictionary.DUEL_IN_GROUP.name,
+            Dictionary.NO_BACK_TO_BACK_MATCHES.name,
             Dictionary.HOME_AWAY_MATCHES.name,
             Dictionary.LOCATION_HOST_LINK.name,
             Dictionary.EACH_CLUB_HOSTED_AT_MOST_ONCE.name,
             Dictionary.MAX_DISTANCE.name,
-            Dictionary.FULL_MATCHES_IN_POOL.name,
+//            Dictionary.FULL_MATCHES_IN_POOL.name,
 //            Dictionary.FULL_MATCHES_OUTSIDE_POOL.name,
-            Dictionary.NO_CONSECUTIVE_BYES.name,
+//            Dictionary.NO_CONSECUTIVE_BYES.name,
 //            Dictionary.CONSECUTIVE_AWAY_MATCHES.name,
-//            Dictionary.CLUB_TEAMS_PLAY_TOGETHER.name,
+            Dictionary.CLUB_TEAMS_PLAY_TOGETHER_LINK.name,
+            Dictionary.CLUB_TEAMS_PLAY_TOGETHER_AT_LEAST_X.name,
             Dictionary.CLUB_TEAMS_HOST_TOGETHER.name,
             Dictionary.INDIVIDUAL_WISHES.name,
             Dictionary.JOINT_TEAM_CLUBS_SHARE_HOSTING.name,
             Dictionary.JOINT_TEAM_HOST_LINK.name,
-            Dictionary.BYES_ON_A_MATCH_DAY.name,
+//            Dictionary.BYES_ON_A_MATCH_DAY.name,
             Dictionary.NO_BACK_TO_BACK_HOME_MATCHES.name,
             Dictionary.NUMBER_OF_BYES.name,
         )

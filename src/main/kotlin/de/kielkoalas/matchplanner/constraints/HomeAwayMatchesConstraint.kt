@@ -4,6 +4,7 @@ import com.google.ortools.linearsolver.MPSolver
 import de.kielkoalas.matchplanner.buildSumConstraint
 import de.kielkoalas.matchplanner.ConstraintSet
 import de.kielkoalas.matchplanner.models.Problem
+import de.kielkoalas.matchplanner.models.Solution
 import de.kielkoalas.matchplanner.models.getAllGroups
 import de.kielkoalas.matchplanner.variables.Host
 
@@ -29,14 +30,14 @@ class HomeAwayMatchesConstraint(private val problem: Problem) : ConstraintSet {
                         Host.get(solver, matchDay, groupNo, team)
                     else null
                 }
-                solver.buildSumConstraint(1.0, 2.0, duelsKey, hostVariablesDuels)
+                solver.buildSumConstraint(2.0, 2.0, duelsKey, hostVariablesDuels)
 
             } else {
                 val womenKey = "homeMatches-${team.abbreviation}-women"
                 val hostVariablesWomen = problem.getAllGroups("w").map { (matchDay, groupNo) ->
                     Host.get(solver, matchDay, groupNo, team)
                 }
-                solver.buildSumConstraint(2.0, 3.0, womenKey, hostVariablesWomen)
+                solver.buildSumConstraint(2.0, 6.0, womenKey, hostVariablesWomen)
             }
         }
     }
