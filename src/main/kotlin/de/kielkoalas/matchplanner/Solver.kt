@@ -89,23 +89,34 @@ class Solver {
 
     private fun buildSolution(problem: Problem, mpSolver: MPSolver): Solution {
         val matchDayAssignments = problem.matchDays.associateWith { matchDay ->
-            matchDay.getGroupNumbers("m").map { groupNo ->
-                val hosts = problem.teams.filter { team ->
-                    isSet(Host.get(mpSolver, matchDay, groupNo, team))
+            val groups = problem.competitions.flatMap { competition ->
+                matchDay.getGroupNumbers(competition).mapNotNull { groupNo ->
+                    problem.teams.find { team ->
+                        team.competition == competition &&
+                        isSet(Host.get(mpSolver, matchDay, groupNo, team))
+                    }?.let { host ->
+                        val hostClub = if (host.clubs.size == 1) host.clubs.first() else {
+                            host.clubs.find { hostClub ->
+                                isSet(JointTeamHost.get(mpSolver, matchDay, groupNo, host, hostClub))
+                            } ?: error("No host club defined for ${host.abbreviation} on ${matchDay.number}")
+                        }
+                        val teams = problem.teams.filter { team ->
+                            team.competition == competition &&
+                            isSet(GroupAssignment.get(mpSolver, team.competition, matchDay, groupNo, team))
+                        }
+                        val playingTeams = teams.filter { team ->
+                            teams.any { it != team && it.competition == team.competition }
+                        }
+                        println("group for ${matchDay.number}-$groupNo-$competition: ${host.abbreviation} hosts ${playingTeams.map { "${it.abbreviation}-${it.competition}" }}")
+                        Group(hostClub, playingTeams.toSet())
+                    }
                 }
-                val firstHost = hosts.first()
-                val hostClub = if (firstHost.clubs.size == 1) firstHost.clubs.first() else {
-                    firstHost.clubs.find { hostClub ->
-                        isSet(JointTeamHost.get(mpSolver, matchDay, groupNo, firstHost, hostClub))
-                    } ?: error("No host club defined for ${firstHost.abbreviation} on ${matchDay.number}")
+            }.toSet()
+            groups.groupBy { it.host }.values.mapNotNull { sameHostGroups ->
+                val host = sameHostGroups.firstOrNull()?.host
+                host?.let {
+                    Group(host, sameHostGroups.flatMap { it.teams }.toSet())
                 }
-                val teams = problem.teams.filter { team ->
-                    isSet(GroupAssignment.get(mpSolver, team.competition, matchDay, groupNo, team))
-                }
-                val playingTeams = teams.filter { team ->
-                    teams.any { it != team && it.competition == team.competition }
-                }
-                Group(hostClub, playingTeams.toSet())
             }.toSet()
         }
         return Solution(problem, matchDayAssignments)

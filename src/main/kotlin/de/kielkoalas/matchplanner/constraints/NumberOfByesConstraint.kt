@@ -15,8 +15,8 @@ class NumberOfByesConstraint(private val problem: Problem) : ConstraintSet {
 
     override fun createInSolver(solver: MPSolver) {
         for (team in problem.teams) {
-            val lb = if (team.competition == "m") 7.0 else 2.0
-            val ub = if (team.competition == "m") 7.0 else 8.0
+            val lb = if (team.competition == "m") 7.0 else 6.0
+            val ub = if (team.competition == "m") 7.0 else 6.0
             val keyTriples = "assigned-${team.abbreviation}-${team.competition}"
             val assignmentVariables = problem.getAllGroups(team.competition).map { (matchDay, groupNo) ->
                 GroupAssignment.get(solver, team.competition, matchDay, groupNo, team)

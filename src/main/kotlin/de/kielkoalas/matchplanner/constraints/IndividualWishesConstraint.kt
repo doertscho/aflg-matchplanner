@@ -21,14 +21,14 @@ class IndividualWishesConstraint(private val problem: Problem) : ConstraintSet {
             }
         solver.buildSumConstraint(1.0, 1.0, "kiel-home-round-4", kiwoMatchVars)
 
-        // Dresden to host on match day 1
-        val one = problem.matchDays.find { it.number == 1 } ?: error("")
+        // Dresden to host on match day 2
+        val two = problem.matchDays.find { it.number == 2 } ?: error("")
         val dw = problem.clubs.find { it.abbreviation == "DW" } ?: error("")
         val rw = problem.teams.find { it.abbreviation == "RW" } ?: error("")
         val dresdenOneHostVars = listOf(
-            Host.get(solver, one, 1, rw),
-            JointTeamHost.get(solver, one, 1, rw, dw)
+            Host.get(solver, two, 1, rw),
+            JointTeamHost.get(solver, two, 1, rw, dw)
         )
-        solver.buildSumConstraint(2.0, 2.0, "dresden-host-round-1", dresdenOneHostVars)
+        solver.buildSumConstraint(2.0, 2.0, "dresden-host-round-2", dresdenOneHostVars)
     }
 }

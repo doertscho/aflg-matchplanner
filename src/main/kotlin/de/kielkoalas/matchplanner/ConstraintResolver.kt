@@ -25,6 +25,7 @@ object ConstraintResolver {
         Dictionary.LOCATION_HOST_LINK.name to { p -> LocationHostConstraint(p) },
         Dictionary.MAX_DISTANCE.name to { p -> DistanceConstraint(p) },
         Dictionary.CLUB_TEAMS_PLAY_TOGETHER_LINK.name to { p -> ClubTeamsPlayTogetherLinkConstraint(p) },
+        Dictionary.CLUB_TEAMS_HOST_TOGETHER_LINK.name to { p -> ClubTeamsHostTogetherLinkConstraint(p) },
         Dictionary.CLUB_TEAMS_PLAY_TOGETHER_AT_LEAST_X.name to { p -> ClubTeamsPlayTogetherAtLeastXConstraint(p) },
         Dictionary.CLUB_TEAMS_HOST_TOGETHER.name to { p -> ClubTeamsHostTogetherConstraint(p) },
         Dictionary.FULL_MATCHES_IN_POOL.name to { p -> FullMatchesInPoolConstraint(p) },

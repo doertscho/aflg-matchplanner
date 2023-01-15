@@ -29,7 +29,7 @@ object Location : VariableSet<LocationKey> {
     override fun createInSolver(problem: Problem, solver: MPSolver) {
         for (competition in problem.competitions) {
             for ((matchDay, groupNo) in problem.getAllGroups(competition)) {
-                for (hostClub in problem.teams.filter { it.competition == competition }.flatMap { it.clubs }) {
+                for (hostClub in problem.clubs) {
                     for (guestTeam in problem.teams.filter { it.competition == competition }) {
                         val key = getKey(LocationKey(matchDay, groupNo, hostClub, guestTeam))
                         solver.makeBoolVar(key)

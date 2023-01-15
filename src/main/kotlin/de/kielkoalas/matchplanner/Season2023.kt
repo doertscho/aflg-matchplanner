@@ -83,7 +83,7 @@ val redWolves = Team("RW", "Frankfurt/Dresden RedWolves", "m", setOf(FR, DW))
 val mensTeams = clubs.minus(setOf(FR, DW)).map { club ->
     Team(club.abbreviation, club.name, "m", setOf(club) )
 }.toSet() + setOf(redWolves)
-val womensTeams = setOf(HD, BC, RL, HK).map { club ->
+val womensTeams = setOf(HD, BC, RL, HK, MK).map { club ->
     Team(club.abbreviation, club.name, "w", setOf(club) )
 }
 //+ setOf(
@@ -94,8 +94,8 @@ fun main() {
 
     val problem = Problem(
         dates = listOf(
+            LocalDate.parse("2023-04-15"),
             LocalDate.parse("2023-05-06"),
-            LocalDate.parse("2023-05-20"),
             LocalDate.parse("2023-06-03"),
             LocalDate.parse("2023-06-17"),
             LocalDate.parse("2023-07-15"),
@@ -114,6 +114,7 @@ fun main() {
             Duel,
             Location,
             JointTeamHost,
+            ClubTeamsHostTogether,
             ClubTeamsPlayTogether,
         ),
         constraints = setOf(
@@ -134,10 +135,11 @@ fun main() {
             Dictionary.MAX_DISTANCE.name,
 //            Dictionary.FULL_MATCHES_IN_POOL.name,
 //            Dictionary.FULL_MATCHES_OUTSIDE_POOL.name,
-//            Dictionary.NO_CONSECUTIVE_BYES.name,
+            Dictionary.NO_CONSECUTIVE_BYES.name,
 //            Dictionary.CONSECUTIVE_AWAY_MATCHES.name,
             Dictionary.CLUB_TEAMS_PLAY_TOGETHER_LINK.name,
             Dictionary.CLUB_TEAMS_PLAY_TOGETHER_AT_LEAST_X.name,
+            Dictionary.CLUB_TEAMS_HOST_TOGETHER_LINK.name,
             Dictionary.CLUB_TEAMS_HOST_TOGETHER.name,
             Dictionary.INDIVIDUAL_WISHES.name,
             Dictionary.JOINT_TEAM_CLUBS_SHARE_HOSTING.name,
